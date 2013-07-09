@@ -53,15 +53,15 @@ To run example
 ###Using ensembl-rest-client
 
 ```java
-    // create an injector
-    Injector injector = Guice.createInjector(new EnsemblRestClientModule());
+// create an injector
+Injector injector = Guice.createInjector(new EnsemblRestClientModule());
+
+// lookup service
+LookupService lookupService = injector.getInstance(LookupService.class);
+Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
     
-    // lookup service
-    LookupService lookupService = injector.getInstance(LookupService.class);
-    Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
-    
-    // variation service
-    VariationService variationService = injector.getInstance(VariationService.class);
-    VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
-    VariationConsequences region = variationService.consequences("human", "9:22125503-22125502:1", "C");
+// variation service
+VariationService variationService = injector.getInstance(VariationService.class);
+VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
+VariationConsequences region = variationService.consequences("human", "9:22125503-22125502:1", "C");
 ```
