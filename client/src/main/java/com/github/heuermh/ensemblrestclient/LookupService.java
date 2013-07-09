@@ -39,7 +39,7 @@ public interface LookupService {
      *
      * @param species species
      * @param id id
-     * @return
+     * @return location in the available Ensembl databases for the specified identifier
      */
     @GET("/lookup/id/{id}?format=full")
     @Headers("Content-type: application/json")
