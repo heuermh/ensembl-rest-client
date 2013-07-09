@@ -6,7 +6,7 @@ Java client for the Ensembl REST API.
 [![Build Status](https://travis-ci.org/heuermh/ensembl-rest-client.png)](https://travis-ci.org/heuermh/ensembl-rest-client)
 
 
-###Hacking personal-genome-client
+###Hacking ensembl-rest-client
 
 Install
 
