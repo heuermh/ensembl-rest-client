@@ -1,0 +1,233 @@
+{
+   "data" : [
+      {
+         "is_somatic" : 1,
+         "location" : {
+            "strand" : 1,
+            "name" : "7",
+            "coord_system" : "chromosome",
+            "start" : 140453136,
+            "end" : 140453136
+         },
+         "name" : "COSM476",
+         "hgvs" : {
+            "T" : "7:g.140453136A>T"
+         },
+         "transcripts" : [
+            {
+               "translation_stable_id" : "ENSP00000288602",
+               "cdna_end" : 1860,
+               "intron_number" : null,
+               "translation_end" : 600,
+               "exon_number" : "15/18",
+               "protein_features" : [
+                  {
+                     "db" : "Pfam domain",
+                     "name" : "PF07714"
+                  },
+                  {
+                     "db" : "Pfam domain",
+                     "name" : "PF00069"
+                  },
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF56112"
+                  },
+                  {
+                     "db" : "SMART domains",
+                     "name" : "SM00220"
+                  },
+                  {
+                     "db" : "SMART domains",
+                     "name" : "SM00219"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50011"
+                  }
+               ],
+               "is_canonical" : 1,
+               "transcript_id" : "ENST00000288602",
+               "cdna_start" : 1860,
+               "gene_id" : "ENSG00000157764",
+               "cds_start" : 1799,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "probably damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "gTg/gAg",
+                     "polyphen_score" : 0.999,
+                     "hgvs_protein" : "ENSP00000288602.6:p.Val600Glu",
+                     "sift_score" : 0,
+                     "consequence_terms" : [
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "V/E",
+                     "codon_allele_string" : "GTG/GAG",
+                     "allele_string" : "A/T",
+                     "hgvs_transcript" : "ENST00000288602.6:c.1799T>A"
+                  }
+               ],
+               "translation_start" : 600,
+               "name" : "BRAF",
+               "biotype" : "protein_coding",
+               "cds_end" : 1799,
+               "ccds" : "CCDS5863.1",
+               "cdna_allele_string" : "T/A",
+               "codon_position" : 2
+            },
+            {
+               "translation_stable_id" : "ENSP00000418033",
+               "cdna_end" : 83,
+               "intron_number" : null,
+               "translation_end" : 28,
+               "exon_number" : "2/6",
+               "protein_features" : [
+                  {
+                     "db" : "Pfam domain",
+                     "name" : "PF00069"
+                  },
+                  {
+                     "db" : "Pfam domain",
+                     "name" : "PF07714"
+                  },
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF56112"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50011"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000479537",
+               "cdna_start" : 83,
+               "gene_id" : "ENSG00000157764",
+               "cds_start" : 83,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "probably damaging",
+                     "sift_prediction" : "tolerated",
+                     "display_codon_allele_string" : "gTg/gAg",
+                     "polyphen_score" : 0.946,
+                     "hgvs_protein" : "ENSP00000418033.1:p.Val28Glu",
+                     "sift_score" : 0.12,
+                     "consequence_terms" : [
+                        "missense_variant",
+                        "NMD_transcript_variant"
+                     ],
+                     "pep_allele_string" : "V/E",
+                     "codon_allele_string" : "GTG/GAG",
+                     "allele_string" : "A/T",
+                     "hgvs_transcript" : "ENST00000479537.1:c.83T>A"
+                  }
+               ],
+               "translation_start" : 28,
+               "name" : "BRAF",
+               "biotype" : "nonsense_mediated_decay",
+               "cds_end" : 83,
+               "cdna_allele_string" : "T/A",
+               "codon_position" : 2
+            },
+            {
+               "translation_stable_id" : "ENSP00000419060",
+               "cdna_end" : 622,
+               "intron_number" : null,
+               "translation_end" : 208,
+               "exon_number" : "6/10",
+               "protein_features" : [
+                  {
+                     "db" : "Pfam domain",
+                     "name" : "PF07714"
+                  },
+                  {
+                     "db" : "Pfam domain",
+                     "name" : "PF00069"
+                  },
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF56112"
+                  },
+                  {
+                     "db" : "SMART domains",
+                     "name" : "SM00220"
+                  },
+                  {
+                     "db" : "SMART domains",
+                     "name" : "SM00219"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50011"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000496384",
+               "cdna_start" : 622,
+               "gene_id" : "ENSG00000157764",
+               "cds_start" : 623,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "probably damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "gTg/gAg",
+                     "polyphen_score" : 0.993,
+                     "hgvs_protein" : "ENSP00000419060.1:p.Val208Glu",
+                     "sift_score" : 0,
+                     "consequence_terms" : [
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "V/E",
+                     "codon_allele_string" : "GTG/GAG",
+                     "allele_string" : "A/T",
+                     "hgvs_transcript" : "ENST00000496384.1:c.622T>A"
+                  }
+               ],
+               "translation_start" : 208,
+               "name" : "BRAF",
+               "biotype" : "protein_coding",
+               "cds_end" : 623,
+               "cdna_allele_string" : "T/A",
+               "codon_position" : 2
+            },
+            {
+               "translation_stable_id" : "ENSP00000420119",
+               "cdna_end" : 1834,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : "16/19",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000497784",
+               "cdna_start" : 1834,
+               "gene_id" : "ENSG00000157764",
+               "cds_start" : null,
+               "translation_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "NMD_transcript_variant",
+                        "3_prime_UTR_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "A/T",
+                     "hgvs_transcript" : "ENST00000497784.1:c.*1249T>A"
+                  }
+               ],
+               "name" : "BRAF",
+               "biotype" : "nonsense_mediated_decay",
+               "cds_end" : null,
+               "cdna_allele_string" : "T/A",
+               "codon_position" : 1
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,358 @@
+{
+   "data" : [
+      {
+         "location" : {
+            "strand" : 1,
+            "name" : "9",
+            "coord_system" : "chromosome",
+            "start" : 22125503,
+            "end" : 22125502
+         },
+         "hgvs" : {
+            "C" : "9:g.22125502_22125503insC"
+         },
+         "transcripts" : [
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000585267",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000580576",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 1,
+               "transcript_id" : "ENST00000428597",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000584816",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000584020",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000577551",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000584637",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000581051",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000582072",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000240498",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "-/C",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "CDKN2B-AS1",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "antisense",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "-/C",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000422420",
+               "cdna_start" : null,
+               "codon_position" : null
+            }
+         ]
+      }
+   ]
+}

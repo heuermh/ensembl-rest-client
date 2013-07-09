@@ -1,0 +1,10 @@
+{
+   "object_type" : "Gene",
+   "species" : "homo_sapiens",
+   "end" : 140624564,
+   "seq_region_name" : "7",
+   "db_type" : "core",
+   "strand" : -1,
+   "id" : "ENSG00000157764",
+   "start" : 140424943
+}

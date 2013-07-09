@@ -1,0 +1,1582 @@
+{
+   "data" : [
+      {
+         "location" : {
+            "strand" : 1,
+            "name" : "1",
+            "coord_system" : "chromosome",
+            "start" : 6524705,
+            "end" : 6524705
+         },
+         "hgvs" : {
+            "T" : "1:g.6524705C>T"
+         },
+         "transcripts" : [
+            {
+               "translation_stable_id" : "ENSP00000367059",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 1,
+               "transcript_id" : "ENST00000377828",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000187017",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "ESPN",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS70.1",
+               "cdna_allele_string" : "C/T",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000465308",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000461727",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000187017",
+               "cds_start" : null,
+               "translation_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "name" : "ESPN",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "cdna_allele_string" : "C/T",
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000187017",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "ESPN",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "processed_transcript",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "C/T",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000475228",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000399239",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000416731",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000187017",
+               "cds_start" : null,
+               "translation_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "name" : "ESPN",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "cdna_allele_string" : "C/T",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000413621",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000434576",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000187017",
+               "cds_start" : null,
+               "translation_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "name" : "ESPN",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "cdna_allele_string" : "C/T",
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000187017",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "ESPN",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "C/T",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000477679",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000187017",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "ESPN",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "processed_transcript",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "C/T",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000468561",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "upstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000473343",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "nc_transcript_variant",
+                        "non_coding_exon_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000513135.1:n.870G>A"
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "cdna_end" : 870,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : "3/6",
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000513135",
+               "cdna_start" : 870,
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000431554",
+               "cdna_end" : 438,
+               "intron_number" : null,
+               "translation_end" : 124,
+               "exon_number" : "4/9",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000485036",
+               "cdna_start" : 438,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 370,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "possibly damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.475,
+                     "hgvs_protein" : "ENSP00000431554.1:p.Glu124Lys",
+                     "sift_score" : 0.04,
+                     "consequence_terms" : [
+                        "NMD_transcript_variant",
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000485036.1:c.370G>A"
+                  }
+               ],
+               "translation_start" : 124,
+               "name" : "TNFRSF25",
+               "biotype" : "nonsense_mediated_decay",
+               "cds_end" : 370,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000434129",
+               "cdna_end" : 438,
+               "intron_number" : null,
+               "translation_end" : 124,
+               "exon_number" : "4/9",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000480393",
+               "cdna_start" : 438,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 370,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "possibly damaging",
+                     "sift_prediction" : "tolerated",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.881,
+                     "hgvs_protein" : "ENSP00000434129.1:p.Glu124Lys",
+                     "sift_score" : 0.06,
+                     "consequence_terms" : [
+                        "NMD_transcript_variant",
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000480393.1:c.370G>A"
+                  }
+               ],
+               "translation_start" : 124,
+               "name" : "TNFRSF25",
+               "biotype" : "nonsense_mediated_decay",
+               "cds_end" : 370,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000367013",
+               "cdna_end" : 438,
+               "intron_number" : null,
+               "translation_end" : 124,
+               "exon_number" : "4/10",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 1,
+               "transcript_id" : "ENST00000377782",
+               "cdna_start" : 438,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 370,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "possibly damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.858,
+                     "hgvs_protein" : "ENSP00000367013.3:p.Glu124Lys",
+                     "sift_score" : 0.04,
+                     "consequence_terms" : [
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000377782.3:c.370G>A"
+                  }
+               ],
+               "translation_start" : 124,
+               "name" : "TNFRSF25",
+               "biotype" : "protein_coding",
+               "cds_end" : 370,
+               "ccds" : "CCDS72.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000349341",
+               "cdna_end" : 458,
+               "intron_number" : null,
+               "translation_end" : 124,
+               "exon_number" : "4/10",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000356876",
+               "cdna_start" : 458,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 370,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "possibly damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.554,
+                     "hgvs_protein" : "ENSP00000349341.3:p.Glu124Lys",
+                     "sift_score" : 0.04,
+                     "consequence_terms" : [
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000356876.3:c.370G>A"
+                  }
+               ],
+               "translation_start" : 124,
+               "name" : "TNFRSF25",
+               "biotype" : "protein_coding",
+               "cds_end" : 370,
+               "ccds" : "CCDS71.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000337713",
+               "cdna_end" : 438,
+               "intron_number" : null,
+               "translation_end" : 124,
+               "exon_number" : "4/9",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000351959",
+               "cdna_start" : 438,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 370,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "benign",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.152,
+                     "hgvs_protein" : "ENSP00000337713.5:p.Glu124Lys",
+                     "sift_score" : 0.04,
+                     "consequence_terms" : [
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000351959.5:c.370G>A"
+                  }
+               ],
+               "translation_start" : 124,
+               "name" : "TNFRSF25",
+               "biotype" : "protein_coding",
+               "cds_end" : 370,
+               "ccds" : "CCDS73.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000404274",
+               "cdna_end" : 370,
+               "intron_number" : null,
+               "translation_end" : 124,
+               "exon_number" : "4/9",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000414040",
+               "cdna_start" : 370,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 370,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "possibly damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.475,
+                     "hgvs_protein" : "ENSP00000404274.2:p.Glu124Lys",
+                     "sift_score" : 0.04,
+                     "consequence_terms" : [
+                        "NMD_transcript_variant",
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000414040.2:c.370G>A"
+                  }
+               ],
+               "translation_start" : 124,
+               "name" : "TNFRSF25",
+               "biotype" : "nonsense_mediated_decay",
+               "cds_end" : 370,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000326762",
+               "cdna_end" : null,
+               "intron_number" : "2/4",
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000351748",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "intron_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000351748.3:c.160+795G>A"
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS75.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000314451",
+               "cdna_end" : 235,
+               "intron_number" : null,
+               "translation_end" : 79,
+               "exon_number" : "3/9",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000348333",
+               "cdna_start" : 235,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 235,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "possibly damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.805,
+                     "hgvs_protein" : "ENSP00000314451.3:p.Glu79Lys",
+                     "sift_score" : 0.04,
+                     "consequence_terms" : [
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000348333.3:c.235G>A"
+                  }
+               ],
+               "translation_start" : 79,
+               "name" : "TNFRSF25",
+               "biotype" : "protein_coding",
+               "cds_end" : 235,
+               "ccds" : "CCDS74.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000423121",
+               "cdna_end" : 235,
+               "intron_number" : null,
+               "translation_end" : 79,
+               "exon_number" : "3/7",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000502588",
+               "cdna_start" : 235,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 235,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "possibly damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.793,
+                     "hgvs_protein" : "ENSP00000423121.1:p.Glu79Lys",
+                     "sift_score" : 0.02,
+                     "consequence_terms" : [
+                        "NMD_transcript_variant",
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000502588.1:c.235G>A"
+                  }
+               ],
+               "translation_start" : 79,
+               "name" : "TNFRSF25",
+               "biotype" : "nonsense_mediated_decay",
+               "cds_end" : 235,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000421976",
+               "cdna_end" : 235,
+               "intron_number" : null,
+               "translation_end" : 79,
+               "exon_number" : "3/5",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000502730",
+               "cdna_start" : 235,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 235,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "probably damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.952,
+                     "hgvs_protein" : "ENSP00000421976.1:p.Glu79Lys",
+                     "sift_score" : 0.01,
+                     "consequence_terms" : [
+                        "NMD_transcript_variant",
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000502730.1:c.235G>A"
+                  }
+               ],
+               "translation_start" : 79,
+               "name" : "TNFRSF25",
+               "biotype" : "nonsense_mediated_decay",
+               "cds_end" : 235,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "translation_stable_id" : "ENSP00000424071",
+               "cdna_end" : 370,
+               "intron_number" : null,
+               "translation_end" : 124,
+               "exon_number" : "4/8",
+               "protein_features" : [
+                  {
+                     "db" : "Superfamily domains",
+                     "name" : "SSF57586"
+                  },
+                  {
+                     "db" : "PROSITE profiles",
+                     "name" : "PS50311"
+                  }
+               ],
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000510563",
+               "cdna_start" : 370,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : 370,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : "possibly damaging",
+                     "sift_prediction" : "deleterious",
+                     "display_codon_allele_string" : "Gag/Aag",
+                     "polyphen_score" : 0.554,
+                     "hgvs_protein" : "ENSP00000424071.1:p.Glu124Lys",
+                     "sift_score" : 0.03,
+                     "consequence_terms" : [
+                        "NMD_transcript_variant",
+                        "missense_variant"
+                     ],
+                     "pep_allele_string" : "E/K",
+                     "codon_allele_string" : "GAG/AAG",
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000510563.1:c.370G>A"
+                  }
+               ],
+               "translation_start" : 124,
+               "name" : "TNFRSF25",
+               "biotype" : "nonsense_mediated_decay",
+               "cds_end" : 370,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "upstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000453260",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "upstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "processed_transcript",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000475730",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "nc_transcript_variant",
+                        "non_coding_exon_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000469691.1:n.260G>A"
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "cdna_end" : 260,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : "2/7",
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000469691",
+               "cdna_start" : 260,
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000465381",
+               "cdna_end" : 401,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : "3/7",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000481401",
+               "cdna_start" : 401,
+               "gene_id" : "ENSG00000215788",
+               "cds_start" : null,
+               "translation_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "5_prime_UTR_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000481401.1:c.-228G>A"
+                  }
+               ],
+               "name" : "TNFRSF25",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : 1
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "nc_transcript_variant",
+                        "non_coding_exon_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000461703.2:n.370G>A"
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "cdna_end" : 370,
+               "intron_number" : null,
+               "biotype" : "processed_transcript",
+               "translation_end" : null,
+               "exon_number" : "4/6",
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000461703",
+               "cdna_start" : 370,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "nc_transcript_variant",
+                        "non_coding_exon_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000453341.1:n.362G>A"
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "cdna_end" : 362,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : "4/5",
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000453341",
+               "cdna_start" : 362,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000215788",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "nc_transcript_variant",
+                        "non_coding_exon_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : "ENST00000515145.1:n.494G>A"
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "TNFRSF25",
+               "cdna_end" : 494,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : "2/2",
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000515145",
+               "cdna_start" : 494,
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000489097",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000366977",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000377748",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS41240.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000344570",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000340850",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS79.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000383704",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000400913",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS79.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "cds_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "biotype" : "retained_intron",
+               "translation_end" : null,
+               "exon_number" : null,
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000487949",
+               "cdna_start" : null,
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000366954",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000377725",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS57967.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000366957",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000377728",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS79.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000366961",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000377732",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "translation_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000383706",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000400915",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS41241.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000366969",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000377740",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "translation_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000441445",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000535355",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS57968.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000366966",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000377737",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS79.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000439625",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 1,
+               "transcript_id" : "ENST00000537245",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS57969.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            },
+            {
+               "translation_stable_id" : "ENSP00000437710",
+               "cdna_end" : null,
+               "intron_number" : null,
+               "translation_end" : null,
+               "exon_number" : null,
+               "is_canonical" : 0,
+               "transcript_id" : "ENST00000544978",
+               "cdna_start" : null,
+               "gene_id" : "ENSG00000171680",
+               "cds_start" : null,
+               "alleles" : [
+                  {
+                     "polyphen_prediction" : null,
+                     "sift_prediction" : null,
+                     "display_codon_allele_string" : null,
+                     "polyphen_score" : null,
+                     "hgvs_protein" : null,
+                     "sift_score" : null,
+                     "consequence_terms" : [
+                        "downstream_gene_variant"
+                     ],
+                     "pep_allele_string" : null,
+                     "codon_allele_string" : null,
+                     "allele_string" : "C/T",
+                     "hgvs_transcript" : null
+                  }
+               ],
+               "translation_start" : null,
+               "name" : "PLEKHG5",
+               "biotype" : "protein_coding",
+               "cds_end" : null,
+               "ccds" : "CCDS57967.1",
+               "cdna_allele_string" : "G/A",
+               "codon_position" : null
+            }
+         ],
+         "regulatory" : [
+            {
+               "alleles" : [
+                  {
+                     "consequence_terms" : [
+                        "regulatory_region_variant"
+                     ],
+                     "is_reference" : 0,
+                     "allele_string" : "C/T"
+                  }
+               ],
+               "type" : "Unclassified",
+               "regulatory_feature_id" : "ENSR00000278802"
+            }
+         ]
+      }
+   ]
+}
