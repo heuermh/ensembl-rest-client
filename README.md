@@ -52,6 +52,7 @@ To run example
 
 ###Using ensembl-rest-client
 
+```java
     // create an injector
     Injector injector = Guice.createInjector(new EnsemblRestClientModule());
     
@@ -63,3 +64,4 @@ To run example
     VariationService variationService = injector.getInstance(VariationService.class);
     VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
     VariationConsequences region = variationService.consequences("human", "9:22125503-22125502:1", "C");
+```
