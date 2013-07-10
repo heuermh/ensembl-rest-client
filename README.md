@@ -52,6 +52,19 @@ To run example
 
 ###Using ensembl-rest-client
 
+Add the following dependency declaration to your pom.xml
+
+```xml
+<dependency>
+  <groupId>com.github.heuermh.ensemblrestclient</groupId>
+  <artifactId>ensembl-rest-client</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+
+
+E.g.
+
 ```java
 // create an injector
 Injector injector = Guice.createInjector(new EnsemblRestClientModule());
