@@ -31,7 +31,7 @@
   </parent>
   <groupId>com.github.heuermh.ensemblrestclient</groupId>
   <artifactId>ensembl-rest-client-multimodule</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>ensembl-rest-client-multimodule</name>
@@ -42,7 +42,7 @@
     <connection>scm:git:git@github.com:heuermh/ensembl-rest-client.git</connection>
     <developerConnection>scm:git:git@github.com:heuermh/ensembl-rest-client.git</developerConnection>
     <url>git@github.com:heuermh/ensembl-rest-client.git</url>
-    <tag>ensembl-rest-client-multimodule-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <licenses>
     <license>

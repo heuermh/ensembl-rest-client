@@ -27,11 +27,11 @@
   <parent>
     <groupId>com.github.heuermh.ensemblrestclient</groupId>
     <artifactId>ensembl-rest-client-multimodule</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>ensembl-rest-client-example</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>ensembl-rest-client-example</name>
