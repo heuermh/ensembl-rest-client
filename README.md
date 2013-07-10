@@ -27,7 +27,7 @@ To assemble example
 
 To run example
 
-    $ java -jar target/ensembl-rest-client-example-1.0-SNAPSHOT-jar-with-dependencies.jar 
+    $ java -jar target/ensembl-rest-client-example-1.1-SNAPSHOT-jar-with-dependencies.jar 
     lookup, ENSG00000157764
     ENSG00000157764 homo_sapiens    Gene    core    7       140424943       140624564       -1
     id search, COSM476
