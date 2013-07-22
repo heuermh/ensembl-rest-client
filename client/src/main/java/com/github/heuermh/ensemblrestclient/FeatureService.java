@@ -23,38 +23,23 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
-import static org.junit.Assert.assertNotNull;
+import java.util.List;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
-import org.junit.Before;
-import org.junit.Test;
+import retrofit.http.GET;
+import retrofit.http.Headers;
+import retrofit.http.Path;
+import retrofit.http.Query;
 
 /**
- * Unit test for EnsemblRestClientModule.
+ * Feature service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
  */
-public final class EnsemblRestClientModuleTest {
-    private EnsemblRestClientModule module;
+public interface FeatureService {
 
-    @Before
-    public void setUp() {
-        module = new EnsemblRestClientModule();
-    }
+    @GET("/feature/id/{id}?feature=variation")
+    @Headers("Content-type: application/json")
+    Variation variationFeature(@Query("species") String species, @Path("id") String id);
 
-    @Test
-    public void testConstructor() {
-        assertNotNull(module);
-    }
-
-    @Test
-    public void testEnsemblRestClientModule() {
-        Injector injector = Guice.createInjector(module);
-        FeatureService featureService = injector.getInstance(FeatureService.class);
-        LookupService lookupService = injector.getInstance(LookupService.class);
-        VariationService variationService = injector.getInstance(VariationService.class);
-        assertNotNull(featureService);
-        assertNotNull(lookupService);
-        assertNotNull(variationService);
-    }
+    @GET("/feature/region/{species}/{region}?feature=variation")
+    @Headers("Content-type: application/json")
+    List<Variation> variationFeatures(@Path("species") String species, @Path("region") String region);
 }

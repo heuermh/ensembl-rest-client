@@ -23,38 +23,46 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
-import static org.junit.Assert.assertNotNull;
-
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
-import org.junit.Before;
-import org.junit.Test;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
- * Unit test for EnsemblRestClientModule.
+ * Variation.
  */
-public final class EnsemblRestClientModuleTest {
-    private EnsemblRestClientModule module;
+public final class Variation {
+    private final String id;
+    private final String reference;
+    private final String alternate;
+    private final Location location;
 
-    @Before
-    public void setUp() {
-        module = new EnsemblRestClientModule();
+    Variation(final String id,
+              final String reference,
+              final String alternate,
+              final Location location) {
+
+        checkNotNull(id);
+        checkNotNull(reference);
+        checkNotNull(alternate);
+        checkNotNull(location);
+
+        this.id = id;
+        this.reference = reference;
+        this.alternate = alternate;
+        this.location = location;
     }
 
-    @Test
-    public void testConstructor() {
-        assertNotNull(module);
+    public String getId() {
+        return id;
     }
 
-    @Test
-    public void testEnsemblRestClientModule() {
-        Injector injector = Guice.createInjector(module);
-        FeatureService featureService = injector.getInstance(FeatureService.class);
-        LookupService lookupService = injector.getInstance(LookupService.class);
-        VariationService variationService = injector.getInstance(VariationService.class);
-        assertNotNull(featureService);
-        assertNotNull(lookupService);
-        assertNotNull(variationService);
+    public String getReference() {
+        return reference;
+    }
+
+    public String getAlternate() {
+        return alternate;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 }

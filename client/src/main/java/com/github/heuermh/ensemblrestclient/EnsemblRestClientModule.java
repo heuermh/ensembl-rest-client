@@ -48,6 +48,14 @@ public final class EnsemblRestClientModule extends AbstractModule {
     }
 
     @Provides @Singleton
+    FeatureService createFeatureService(final JsonFactory jsonFactory) {
+        return new RestAdapter.Builder()
+            .setServer("http://beta.rest.ensembl.org/")
+            .setConverter(new JacksonFeatureConverter(jsonFactory))
+            .build().create(FeatureService.class);
+    }
+
+    @Provides @Singleton
     LookupService createLookupService(final JsonFactory jsonFactory) {
         return new RestAdapter.Builder()
             .setServer("http://beta.rest.ensembl.org/")
