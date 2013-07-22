@@ -23,12 +23,16 @@
 */
 package com.github.heuermh.ensemblrestclient.example;
 
+import java.util.List;
+
 import com.github.heuermh.ensemblrestclient.Allele;
 import com.github.heuermh.ensemblrestclient.EnsemblRestClientModule;
+import com.github.heuermh.ensemblrestclient.FeatureService;
 import com.github.heuermh.ensemblrestclient.Location;
 import com.github.heuermh.ensemblrestclient.Lookup;
 import com.github.heuermh.ensemblrestclient.LookupService;
 import com.github.heuermh.ensemblrestclient.Transcript;
+import com.github.heuermh.ensemblrestclient.Variation;
 import com.github.heuermh.ensemblrestclient.VariationService;
 import com.github.heuermh.ensemblrestclient.VariationConsequences;
 
@@ -43,15 +47,23 @@ public final class Example {
     public static void main(final String args[]) {
         Injector injector = Guice.createInjector(new EnsemblRestClientModule());
 
+
+        FeatureService featureService = injector.getInstance(FeatureService.class);
+
+        System.out.println("features, 7:140424943-140425943");
+        for (Variation variation : featureService.variationFeatures("human", "7:140424943-140425943")) {
+            System.out.println(variation.getId() + "\t" + variation.getReference() + "\t" + variation.getAlternate() + "\t" + variation.getLocation().getName() + "\t" + variation.getLocation().getStart() + "\t" + variation.getLocation().getEnd() + "\t" + variation.getLocation().getStrand());
+        }
+
         LookupService lookupService = injector.getInstance(LookupService.class);
 
-        System.out.println("lookup, ENSG00000157764");
+        System.out.println("\nlookup, ENSG00000157764");
         Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
         System.out.println(ensg00000157764.getId() + "\t" + ensg00000157764.getSpecies() + "\t" + ensg00000157764.getType() + "\t" + ensg00000157764.getDatabase() + "\t" + ensg00000157764.getLocation().getName() + "\t" + ensg00000157764.getLocation().getStart() + "\t" + ensg00000157764.getLocation().getEnd() + "\t" + ensg00000157764.getLocation().getStrand());
 
         VariationService variationService = injector.getInstance(VariationService.class);
 
-        System.out.println("id search, COSM476");
+        System.out.println("\nid search, COSM476");
         VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
 
         for (Transcript transcript : cosm476.getTranscripts()) {
@@ -64,7 +76,7 @@ public final class Example {
         }
 
  
-        System.out.println("region search, 9:22125503-22125502:1");
+        System.out.println("\nregion search, 9:22125503-22125502:1");
         VariationConsequences region = variationService.consequences("human", "9:22125503-22125502:1", "C");
 
         for (Transcript transcript : region.getTranscripts()) {
