@@ -50,7 +50,7 @@ public final class Example {
 
         FeatureService featureService = injector.getInstance(FeatureService.class);
 
-        System.out.println("features, 7:140424943-140425943");
+        System.out.println("\nfeatures, 7:140424943-140425943");
         for (Variation variation : featureService.variationFeatures("human", "7:140424943-140425943")) {
             System.out.println(variation.getId() + "\t" + variation.getReference() + "\t" + variation.getAlternate() + "\t" + variation.getLocation().getName() + "\t" + variation.getLocation().getStart() + "\t" + variation.getLocation().getEnd() + "\t" + variation.getLocation().getStrand());
         }
