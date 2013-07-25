@@ -83,6 +83,12 @@ public final class JacksonFeatureConverterTest {
     }
 
     @Test
+    public void testParseFeatures_ENSG00000157764_variation() throws Exception {
+        List<Variation> variationFeatures = parseFeatures(jsonFactory, getClass().getResourceAsStream("ENSG00000157764_variation.json"));
+        assertNotNull(variationFeatures);
+    }
+
+    @Test
     public void testFromBodyFeature() throws Exception {
         InputStream inputStream = getClass().getResourceAsStream("rs185077298.json");
         TypedInput body = mock(TypedInput.class);
