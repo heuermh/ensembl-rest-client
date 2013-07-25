@@ -41,7 +41,6 @@ public final class Variation {
 
         checkNotNull(id);
         checkNotNull(reference);
-        checkNotNull(alternate);
         checkNotNull(location);
 
         this.id = id;
