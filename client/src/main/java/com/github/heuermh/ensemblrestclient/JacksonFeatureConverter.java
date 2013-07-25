@@ -177,6 +177,10 @@ final class JacksonFeatureConverter implements Converter {
                         int index = 0;
                         while (parser.nextToken() != JsonToken.END_ARRAY) {
                             // assume alt_alleles always contains only two elements
+                            //   this is a bad assumption, e.g.
+                            //   "alt_alleles":["HGMD_MUTATION"]
+                            //   "alt_alleles":["AC","TT","CT","CACCCTCTT","CACCCTCTT","CACCCTCTT"]
+                            //   "alt_alleles":["CA","AT","TCATAT","TCATAT","TCATAT"]
                             if (index == 0) {
                                 reference = parser.getText();
                             }
