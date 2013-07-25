@@ -53,9 +53,9 @@ public final class VariationTest {
         new Variation("rs185077298", null, "T", location);
     }
 
-    @Test(expected=NullPointerException.class)
+    @Test
     public void testConstructorNullAlternate() {
-        new Variation("rs185077298", "C", null, location);
+        assertEquals(null, new Variation("rs185077298", "C", null, location).getAlternate());
     }
 
     @Test(expected=NullPointerException.class)
