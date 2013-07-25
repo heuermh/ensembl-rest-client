@@ -44,7 +44,7 @@ public final class LookupTest {
     }
 
     @Test(expected=NullPointerException.class)
-    public void testConstructorNullId() {
+    public void testConstructorNullIdentifier() {
         new Lookup(null, "homo_sapiens", "Gene", "core", location);
     }
 
@@ -64,8 +64,8 @@ public final class LookupTest {
     }
 
     @Test
-    public void testId() {
-        assertEquals("ENSG00000157764", lookup.getId());
+    public void testIdentifier() {
+        assertEquals("ENSG00000157764", lookup.getIdentifier());
     }
 
     @Test

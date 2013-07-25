@@ -25,40 +25,45 @@ package com.github.heuermh.ensemblrestclient;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.util.List;
+
+import com.google.common.collect.ImmutableList;
+
 /**
  * Variation.
  */
 public final class Variation {
-    private final String id;
-    private final String reference;
-    private final String alternate;
+    private final String identifier;
+    private final String referenceAllele;
+    private final List<String> alternateAlleles;
     private final Location location;
 
-    Variation(final String id,
-              final String reference,
-              final String alternate,
+    Variation(final String identifier,
+              final String referenceAllele,
+              final List<String> alternateAlleles,
               final Location location) {
 
-        checkNotNull(id);
-        checkNotNull(reference);
+        checkNotNull(identifier);
+        checkNotNull(referenceAllele);
+        checkNotNull(alternateAlleles);
         checkNotNull(location);
 
-        this.id = id;
-        this.reference = reference;
-        this.alternate = alternate;
+        this.identifier = identifier;
+        this.referenceAllele = referenceAllele;
+        this.alternateAlleles = ImmutableList.copyOf(alternateAlleles);
         this.location = location;
     }
 
-    public String getId() {
-        return id;
+    public String getIdentifier() {
+        return identifier;
     }
 
-    public String getReference() {
-        return reference;
+    public String getReferenceAllele() {
+        return referenceAllele;
     }
 
-    public String getAlternate() {
-        return alternate;
+    public List<String> getAlternateAlleles() {
+        return alternateAlleles;
     }
 
     public Location getLocation() {

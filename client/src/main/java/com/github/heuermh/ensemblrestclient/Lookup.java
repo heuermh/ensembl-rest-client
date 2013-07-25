@@ -29,31 +29,31 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Lookup.
  */
 public final class Lookup {
-    private final String id;
+    private final String identifier;
     private final String species;
     private final String type;
     private final String database;
     private final Location location;
 
-    Lookup(final String id,
+    Lookup(final String identifier,
            final String species,
            final String type,
            final String database,
            final Location location) {
 
-        checkNotNull(id);
+        checkNotNull(identifier);
         checkNotNull(species);
         checkNotNull(location);
 
-        this.id = id;
+        this.identifier = identifier;
         this.species = species;
         this.type = type;
         this.database = database;
         this.location = location;
     }
 
-    public String getId() {
-        return id;
+    public String getIdentifier() {
+        return identifier;
     }
 
     public String getType() {

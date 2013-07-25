@@ -77,7 +77,7 @@ final class JacksonFeatureConverter implements Converter {
 
             String id = null;
             String reference = null;
-            String alternate = null;
+            List<String> alternateAlleles = new ArrayList<String>();
 
             String locationName = null;
             String coordinateSystem = "chromosome";
@@ -106,18 +106,17 @@ final class JacksonFeatureConverter implements Converter {
                 else if ("alt_alleles".equals(field)) {
                     int index = 0;
                     while (parser.nextToken() != JsonToken.END_ARRAY) {
-                        // assume alt_alleles always contains only two elements
                         if (index == 0) {
                             reference = parser.getText();
                         }
-                        else if (index == 1) {
-                            alternate = parser.getText();
+                        else {
+                            alternateAlleles.add(parser.getText());
                         }
                         index++;
                     }
                 }
             }
-            return new Variation(id, reference, alternate, new Location(locationName, coordinateSystem, start, end, strand));
+            return new Variation(id, reference, alternateAlleles, new Location(locationName, coordinateSystem, start, end, strand));
         }
         finally {
             try {
@@ -143,7 +142,7 @@ final class JacksonFeatureConverter implements Converter {
 
             String id = null;
             String reference = null;
-            String alternate = null;
+            List<String> alternateAlleles = new ArrayList<String>();
 
             String locationName = null;
             String coordinateSystem = "chromosome";
@@ -176,26 +175,21 @@ final class JacksonFeatureConverter implements Converter {
                     else if ("alt_alleles".equals(field)) {
                         int index = 0;
                         while (parser.nextToken() != JsonToken.END_ARRAY) {
-                            // assume alt_alleles always contains only two elements
-                            //   this is a bad assumption, e.g.
-                            //   "alt_alleles":["HGMD_MUTATION"]
-                            //   "alt_alleles":["AC","TT","CT","CACCCTCTT","CACCCTCTT","CACCCTCTT"]
-                            //   "alt_alleles":["CA","AT","TCATAT","TCATAT","TCATAT"]
                             if (index == 0) {
                                 reference = parser.getText();
                             }
                             else if (index == 1) {
-                                alternate = parser.getText();
+                                alternateAlleles.add(parser.getText());
                             }
                             index++;
                         }
                     }
                 }
-                variationFeatures.add(new Variation(id, reference, alternate, new Location(locationName, coordinateSystem, start, end, strand)));
+                variationFeatures.add(new Variation(id, reference, alternateAlleles, new Location(locationName, coordinateSystem, start, end, strand)));
 
                 id = null;
                 reference = null;
-                alternate = null;
+                alternateAlleles.clear();
                 locationName = null;
                 start = -1;
                 end = -1;

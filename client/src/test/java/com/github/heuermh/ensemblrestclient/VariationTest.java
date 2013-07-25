@@ -27,6 +27,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
+
+import com.google.common.collect.ImmutableList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,31 +40,32 @@ import org.junit.Test;
 public final class VariationTest {
     private Variation variation;
     private Location location;
+    private List<String> alternateAlleles = ImmutableList.of("T", "TT");
 
     @Before
     public void setUp() {
         location = new Location("7", "chromosome", 140424949, 140424949, 1);
-        variation = new Variation("rs185077298", "C", "T", location);
+        variation = new Variation("rs185077298", "C", alternateAlleles, location);
     }
 
     @Test(expected=NullPointerException.class)
-    public void testConstructorNullId() {
-        new Variation(null, "C", "T", location);
+    public void testConstructorNullIdentifier() {
+        new Variation(null, "C", alternateAlleles, location);
     }
 
     @Test(expected=NullPointerException.class)
-    public void testConstructorNullReference() {
-        new Variation("rs185077298", null, "T", location);
+    public void testConstructorNullReferenceAllele() {
+        new Variation("rs185077298", null, alternateAlleles, location);
     }
 
-    @Test
-    public void testConstructorNullAlternate() {
-        assertEquals(null, new Variation("rs185077298", "C", null, location).getAlternate());
+    @Test(expected=NullPointerException.class)
+    public void testConstructorNullAlternateAlleles() {
+        new Variation("rs185077298", "C", null, location);
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullLocation() {
-        new Variation("rs185077298", "C", "T", null);
+        new Variation("rs185077298", "C", alternateAlleles, null);
     }
 
     @Test
@@ -69,18 +74,18 @@ public final class VariationTest {
     }
 
     @Test
-    public void testId() {
-        assertEquals("rs185077298", variation.getId());
+    public void testIdentifier() {
+        assertEquals("rs185077298", variation.getIdentifier());
     }
 
     @Test
-    public void testReference() {
-        assertEquals("C", variation.getReference());
+    public void testReferenceAllele() {
+        assertEquals("C", variation.getReferenceAllele());
     }
 
     @Test
-    public void testAlternate() {
-        assertEquals("T", variation.getAlternate());
+    public void testAlternateAlleles() {
+        assertEquals(alternateAlleles, variation.getAlternateAlleles());
     }
 
     @Test

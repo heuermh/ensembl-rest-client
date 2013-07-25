@@ -52,14 +52,14 @@ public final class Example {
 
         System.out.println("\nfeatures, 7:140424943-140425943");
         for (Variation variation : featureService.variationFeatures("human", "7:140424943-140425943")) {
-            System.out.println(variation.getId() + "\t" + variation.getReference() + "\t" + variation.getAlternate() + "\t" + variation.getLocation().getName() + "\t" + variation.getLocation().getStart() + "\t" + variation.getLocation().getEnd() + "\t" + variation.getLocation().getStrand());
+            System.out.println(variation.getIdentifier() + "\t" + variation.getReferenceAllele() + "\t" + variation.getAlternateAlleles() + "\t" + variation.getLocation().getName() + "\t" + variation.getLocation().getStart() + "\t" + variation.getLocation().getEnd() + "\t" + variation.getLocation().getStrand());
         }
 
         LookupService lookupService = injector.getInstance(LookupService.class);
 
         System.out.println("\nlookup, ENSG00000157764");
         Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
-        System.out.println(ensg00000157764.getId() + "\t" + ensg00000157764.getSpecies() + "\t" + ensg00000157764.getType() + "\t" + ensg00000157764.getDatabase() + "\t" + ensg00000157764.getLocation().getName() + "\t" + ensg00000157764.getLocation().getStart() + "\t" + ensg00000157764.getLocation().getEnd() + "\t" + ensg00000157764.getLocation().getStrand());
+        System.out.println(ensg00000157764.getIdentifier() + "\t" + ensg00000157764.getSpecies() + "\t" + ensg00000157764.getType() + "\t" + ensg00000157764.getDatabase() + "\t" + ensg00000157764.getLocation().getName() + "\t" + ensg00000157764.getLocation().getStart() + "\t" + ensg00000157764.getLocation().getEnd() + "\t" + ensg00000157764.getLocation().getStrand());
 
         VariationService variationService = injector.getInstance(VariationService.class);
 
