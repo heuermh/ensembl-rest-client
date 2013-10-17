@@ -56,7 +56,7 @@ final class JacksonFeatureConverter implements Converter {
 
     @Override
     public Object fromBody(final TypedInput body, final Type type) throws ConversionException {
-        try {            
+        try {
             return Variation.class.equals(type) ? parseFeature(jsonFactory, body.in()) : parseFeatures(jsonFactory, body.in());
         }
         catch (IOException e) {
@@ -72,7 +72,7 @@ final class JacksonFeatureConverter implements Converter {
     static Variation parseFeature(final JsonFactory jsonFactory, final InputStream inputStream) throws IOException {
         JsonParser parser = null;
         try {
-            parser = jsonFactory.createJsonParser(inputStream);
+            parser = jsonFactory.createParser(inputStream);
             parser.nextToken();
 
             String id = null;
@@ -137,7 +137,7 @@ final class JacksonFeatureConverter implements Converter {
     static List<Variation> parseFeatures(final JsonFactory jsonFactory, final InputStream inputStream) throws IOException {
         JsonParser parser = null;
         try {
-            parser = jsonFactory.createJsonParser(inputStream);
+            parser = jsonFactory.createParser(inputStream);
             parser.nextToken();
 
             String id = null;

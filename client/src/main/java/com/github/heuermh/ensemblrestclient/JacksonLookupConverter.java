@@ -69,7 +69,7 @@ final class JacksonLookupConverter implements Converter {
     static Lookup parseLookup(final JsonFactory jsonFactory, final InputStream inputStream) throws IOException {
         JsonParser parser = null;
         try {
-            parser = jsonFactory.createJsonParser(inputStream);
+            parser = jsonFactory.createParser(inputStream);
             parser.nextToken();
 
             String id = null;

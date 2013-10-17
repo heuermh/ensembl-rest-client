@@ -31,7 +31,6 @@
   </parent>
 
   <artifactId>ensembl-rest-client-example</artifactId>
-  <version>1.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>ensembl-rest-client-example</name>

@@ -72,7 +72,7 @@ final class JacksonVariationConsequencesConverter implements Converter {
     static VariationConsequences parseVariationConsequences(final JsonFactory jsonFactory, final InputStream inputStream) throws IOException {
         JsonParser parser = null;
         try {
-            parser = jsonFactory.createJsonParser(inputStream);
+            parser = jsonFactory.createParser(inputStream);
             parser.nextToken();
 
             String name = null;
@@ -110,7 +110,7 @@ final class JacksonVariationConsequencesConverter implements Converter {
                             parser.nextToken();
                             if ("name".equals(consequencesField)) {
                                 name = parser.getText();
-                            }                            
+                            }
                             else if ("is_somatic".equals(consequencesField)) {
                                 somatic = (Integer.parseInt(parser.getText()) > 0);
                             }
@@ -214,7 +214,7 @@ final class JacksonVariationConsequencesConverter implements Converter {
                                     alleles.clear();
                                 }
                             }
-                        }                        
+                        }
                     }
                 }
             }

@@ -43,12 +43,12 @@ public final class EnsemblRestClientModule extends AbstractModule {
     }
 
     @Provides @Singleton
-    JsonFactory createJsonFactory() {
+    static JsonFactory createJsonFactory() {
         return new JsonFactory();
     }
 
     @Provides @Singleton
-    FeatureService createFeatureService(final JsonFactory jsonFactory) {
+    static FeatureService createFeatureService(final JsonFactory jsonFactory) {
         return new RestAdapter.Builder()
             .setServer("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonFeatureConverter(jsonFactory))
@@ -56,7 +56,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
     }
 
     @Provides @Singleton
-    LookupService createLookupService(final JsonFactory jsonFactory) {
+    static LookupService createLookupService(final JsonFactory jsonFactory) {
         return new RestAdapter.Builder()
             .setServer("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonLookupConverter(jsonFactory))
@@ -64,7 +64,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
     }
 
     @Provides @Singleton
-    VariationService createVariationService(final JsonFactory jsonFactory) {
+    static VariationService createVariationService(final JsonFactory jsonFactory) {
         return new RestAdapter.Builder()
             .setServer("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))

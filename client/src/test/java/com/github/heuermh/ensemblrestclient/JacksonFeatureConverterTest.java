@@ -26,9 +26,7 @@ package com.github.heuermh.ensemblrestclient;
 import static com.github.heuermh.ensemblrestclient.JacksonFeatureConverter.parseFeature;
 import static com.github.heuermh.ensemblrestclient.JacksonFeatureConverter.parseFeatures;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

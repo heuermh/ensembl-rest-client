@@ -23,8 +23,6 @@
 */
 package com.github.heuermh.ensemblrestclient.example;
 
-import java.util.List;
-
 import com.github.heuermh.ensemblrestclient.Allele;
 import com.github.heuermh.ensemblrestclient.EnsemblRestClientModule;
 import com.github.heuermh.ensemblrestclient.FeatureService;
@@ -75,7 +73,6 @@ public final class Example {
             }
         }
 
- 
         System.out.println("\nregion search, 9:22125503-22125502:1");
         VariationConsequences region = variationService.consequences("human", "9:22125503-22125502:1", "C");
 
