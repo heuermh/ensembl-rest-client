@@ -27,7 +27,7 @@ To assemble example
 
 To run example
 
-    $ java -jar target/ensembl-rest-client-example-1.1-SNAPSHOT-jar-with-dependencies.jar
+    $ java -jar target/ensembl-rest-client-example-1.2-SNAPSHOT-jar-with-dependencies.jar
     
     features, 7:140424943-140425943
     rs185077298     C       T       7       140424949       140424949       1
@@ -80,7 +80,7 @@ Add the following dependency declaration to your pom.xml
 <dependency>
   <groupId>com.github.heuermh.ensemblrestclient</groupId>
   <artifactId>ensembl-rest-client</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 ```
 
@@ -102,6 +102,27 @@ Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
     
 // variation service
 VariationService variationService = injector.getInstance(VariationService.class);
+VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
+VariationConsequences chr9 = variationService.consequences("human", "9:22125503-22125502:1", "C");
+```
+
+or for clients unable to use Guice injection
+
+```java
+// create a factory
+EnsemblRestClientFactory factory = new EnsemblRestClientFactory();
+
+// feature service
+FeatureService featureService = factory.createFeatureService("http://beta.rest.ensembl.org/");
+Variation rs185077298 = featureService.variationFeature("human", "rs185077298");
+List<Variation> chr7 = featureService.variationFeatures("human", "7:140424943-140425943");
+
+// lookup service
+LookupService lookupService = factory.createLookupService("http://beta.rest.ensembl.org/");
+Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
+    
+// variation service
+VariationService variationService = factory.createVariationService("http://beta.rest.ensembl.org/");
 VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
 VariationConsequences chr9 = variationService.consequences("human", "9:22125503-22125502:1", "C");
 ```

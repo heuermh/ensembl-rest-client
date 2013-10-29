@@ -30,7 +30,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import retrofit.RestAdapter;
 
 /**
- * Ensembl REST client factory, for clients that cannot use Guice injection.
+ * Ensembl REST client factory, for clients unable to use Guice injection.
  *
  * @since 1.2
  */
