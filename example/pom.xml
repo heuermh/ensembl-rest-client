@@ -34,7 +34,7 @@
   <packaging>jar</packaging>
 
   <name>ensembl-rest-client-example</name>
-  <description>Example for the Ensembl REST API client library.</description>
+  <description>Examples for the Ensembl REST API client library.</description>
 
   <build>
     <plugins>

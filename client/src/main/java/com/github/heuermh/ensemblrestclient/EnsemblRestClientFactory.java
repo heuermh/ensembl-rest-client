@@ -31,6 +31,8 @@ import retrofit.RestAdapter;
 
 /**
  * Ensembl REST client factory, for clients that cannot use Guice injection.
+ *
+ * @since 1.2
  */
 public final class EnsemblRestClientFactory {
     private final JsonFactory jsonFactory;
