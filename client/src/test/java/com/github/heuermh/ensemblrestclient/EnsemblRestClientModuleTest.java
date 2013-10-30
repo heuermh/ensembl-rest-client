@@ -53,8 +53,10 @@ public final class EnsemblRestClientModuleTest {
         FeatureService featureService = injector.getInstance(FeatureService.class);
         LookupService lookupService = injector.getInstance(LookupService.class);
         VariationService variationService = injector.getInstance(VariationService.class);
+        SequenceService sequenceService = injector.getInstance(SequenceService.class);
         assertNotNull(featureService);
         assertNotNull(lookupService);
         assertNotNull(variationService);
+        assertNotNull(sequenceService);
     }
 }

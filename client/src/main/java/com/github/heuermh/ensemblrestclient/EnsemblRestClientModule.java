@@ -70,4 +70,12 @@ public final class EnsemblRestClientModule extends AbstractModule {
             .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))
             .build().create(VariationService.class);
     }
+
+    @Provides @Singleton
+    static SequenceService createSequenceService(final JsonFactory jsonFactory) {
+        return new RestAdapter.Builder()
+            .setServer("http://beta.rest.ensembl.org/")
+            .setConverter(new JacksonSequenceConverter(jsonFactory))
+            .build().create(SequenceService.class);
+    }
 }

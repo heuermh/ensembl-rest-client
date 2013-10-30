@@ -68,4 +68,11 @@ public final class EnsemblRestClientFactory {
             .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))
             .build().create(VariationService.class);
     }
+
+    public SequenceService createSequenceService(final String serverUrl) {
+        return new RestAdapter.Builder()
+            .setServer(serverUrl)
+            .setConverter(new JacksonSequenceConverter(jsonFactory))
+            .build().create(SequenceService.class);
+    }
 }

@@ -85,4 +85,14 @@ public final class EnsemblRestClientFactoryTest {
     public void testCreateVariationService() {
         assertNotNull(factory.createVariationService("http://beta.rest.ensembl.org/"));
     }
+
+    @Test(expected=NullPointerException.class)
+    public void testCreateSequenceServiceNullServerURL() {
+        factory.createSequenceService(null);
+    }
+
+    @Test
+    public void testCreateSequenceService() {
+        assertNotNull(factory.createSequenceService("http://beta.rest.ensembl.org/"));
+    }
 }
