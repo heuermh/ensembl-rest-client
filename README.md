@@ -27,7 +27,7 @@ To assemble example
 
 To run example
 
-    $ java -jar target/ensembl-rest-client-example-1.2-SNAPSHOT-jar-with-dependencies.jar
+    $ java -jar target/ensembl-rest-client-example-1.3-SNAPSHOT-jar-with-dependencies.jar
     
     features, 7:140424943-140425943
     rs185077298     C       T       7       140424949       140424949       1
@@ -70,6 +70,10 @@ To run example
     null   9       22125503 22125502        1       ENSG00000240498 ENST00000581051 -/C     downstream_gene_variant
     null   9       22125503 22125502        1       ENSG00000240498 ENST00000582072 -/C     downstream_gene_variant
     null   9       22125503 22125502        1       ENSG00000240498 ENST00000422420 -/C     downstream_gene_variant
+    
+    sequence, 9:22125502-22125502:1 plus 25 bp flanking sequence
+    >chromosome:GRCh37:9:22125477:22125527:1
+    TCATACTAACCATATGATCAACAGTTGAAAAGCAGCCACTCGCAGAGGTAA
 
 
 ###Using ensembl-rest-client
@@ -80,7 +84,7 @@ Add the following dependency declaration to your pom.xml
 <dependency>
   <groupId>com.github.heuermh.ensemblrestclient</groupId>
   <artifactId>ensembl-rest-client</artifactId>
-  <version>1.2</version>
+  <version>1.3-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -104,6 +108,10 @@ Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
 VariationService variationService = injector.getInstance(VariationService.class);
 VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
 VariationConsequences chr9 = variationService.consequences("human", "9:22125503-22125502:1", "C");
+
+// sequence
+SequenceService sequenceService = injector.getInstance(SequenceService.class);
+Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
 ```
 
 or for clients unable to use Guice injection
@@ -125,4 +133,8 @@ Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
 VariationService variationService = factory.createVariationService("http://beta.rest.ensembl.org/");
 VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
 VariationConsequences chr9 = variationService.consequences("human", "9:22125503-22125502:1", "C");
+
+// sequence service
+SequenceService sequenceService = factory.createSequenceService("http://beta.rest.ensembl.org/");
+Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
 ```

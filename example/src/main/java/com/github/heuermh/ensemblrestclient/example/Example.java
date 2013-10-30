@@ -29,6 +29,8 @@ import com.github.heuermh.ensemblrestclient.FeatureService;
 import com.github.heuermh.ensemblrestclient.Location;
 import com.github.heuermh.ensemblrestclient.Lookup;
 import com.github.heuermh.ensemblrestclient.LookupService;
+import com.github.heuermh.ensemblrestclient.Sequence;
+import com.github.heuermh.ensemblrestclient.SequenceService;
 import com.github.heuermh.ensemblrestclient.Transcript;
 import com.github.heuermh.ensemblrestclient.Variation;
 import com.github.heuermh.ensemblrestclient.VariationService;
@@ -44,7 +46,6 @@ public final class Example {
 
     public static void main(final String args[]) {
         Injector injector = Guice.createInjector(new EnsemblRestClientModule());
-
 
         FeatureService featureService = injector.getInstance(FeatureService.class);
 
@@ -84,5 +85,13 @@ public final class Example {
                 }
             }
         }
+
+        SequenceService sequenceService = injector.getInstance(SequenceService.class);
+
+        System.out.println("\nsequence, 9:22125502-22125502:1 plus 25 bp flanking sequence");
+        Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
+
+        System.out.println(">" + sequence.getIdentifier());
+        System.out.println(sequence.getSequence());
     }
 }
