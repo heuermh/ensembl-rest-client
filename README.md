@@ -109,7 +109,7 @@ VariationService variationService = injector.getInstance(VariationService.class)
 VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
 VariationConsequences chr9 = variationService.consequences("human", "9:22125503-22125502:1", "C");
 
-// sequence
+// sequence service
 SequenceService sequenceService = injector.getInstance(SequenceService.class);
 Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
 ```
