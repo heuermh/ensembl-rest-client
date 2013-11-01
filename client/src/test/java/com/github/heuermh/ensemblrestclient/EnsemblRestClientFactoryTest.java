@@ -48,12 +48,32 @@ public final class EnsemblRestClientFactoryTest {
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullJsonFactory() {
-        new EnsemblRestClientFactory(null);
+        new EnsemblRestClientFactory((JsonFactory) null);
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void testConstructorNullDefaultServerUrl() {
+        new EnsemblRestClientFactory((String) null);
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void testConstructorDefaultServerUrlNullJsonFactory() {
+        new EnsemblRestClientFactory("http://beta.rest.ensembl.org/", null);
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void testConstructorJsonFactoryNullDefaultServerUrl() {
+        new EnsemblRestClientFactory(null, new JsonFactory());
     }
 
     @Test
     public void testConstructorJsonFactory() {
         assertNotNull(new EnsemblRestClientFactory(new JsonFactory()));
+    }
+
+    @Test
+    public void testConstructorDefaultServerUrl() {
+        assertNotNull(new EnsemblRestClientFactory("http://beta.rest.ensembl.org/"));
     }
 
     @Test(expected=NullPointerException.class)
@@ -66,6 +86,11 @@ public final class EnsemblRestClientFactoryTest {
         assertNotNull(factory.createFeatureService("http://beta.rest.ensembl.org/"));
     }
 
+    @Test
+    public void testCreateFeatureServiceDefaultServerUrl() {
+        assertNotNull(factory.createFeatureService());
+    }
+
     @Test(expected=NullPointerException.class)
     public void testCreateLookupServiceNullServerURL() {
         factory.createLookupService(null);
@@ -74,6 +99,11 @@ public final class EnsemblRestClientFactoryTest {
     @Test
     public void testCreateLookupService() {
         assertNotNull(factory.createLookupService("http://beta.rest.ensembl.org/"));
+    }
+
+    @Test
+    public void testCreateLookupServiceDefaultServerUrl() {
+        assertNotNull(factory.createLookupService());
     }
 
     @Test(expected=NullPointerException.class)
@@ -86,6 +116,11 @@ public final class EnsemblRestClientFactoryTest {
         assertNotNull(factory.createVariationService("http://beta.rest.ensembl.org/"));
     }
 
+    @Test
+    public void testCreateVariationServiceDefaultServerUrl() {
+        assertNotNull(factory.createVariationService());
+    }
+
     @Test(expected=NullPointerException.class)
     public void testCreateSequenceServiceNullServerURL() {
         factory.createSequenceService(null);
@@ -94,5 +129,10 @@ public final class EnsemblRestClientFactoryTest {
     @Test
     public void testCreateSequenceService() {
         assertNotNull(factory.createSequenceService("http://beta.rest.ensembl.org/"));
+    }
+
+    @Test
+    public void testCreateSequenceServiceDefaultServerUrl() {
+        assertNotNull(factory.createSequenceService());
     }
 }

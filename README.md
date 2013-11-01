@@ -118,23 +118,23 @@ or for clients unable to use Guice injection
 
 ```java
 // create a factory
-EnsemblRestClientFactory factory = new EnsemblRestClientFactory();
+EnsemblRestClientFactory factory = new EnsemblRestClientFactory("http://beta.rest.ensembl.org/");
 
 // feature service
-FeatureService featureService = factory.createFeatureService("http://beta.rest.ensembl.org/");
+FeatureService featureService = factory.createFeatureService();
 Variation rs185077298 = featureService.variationFeature("human", "rs185077298");
 List<Variation> chr7 = featureService.variationFeatures("human", "7:140424943-140425943");
 
 // lookup service
-LookupService lookupService = factory.createLookupService("http://beta.rest.ensembl.org/");
+LookupService lookupService = factory.createLookupService();
 Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
     
 // variation service
-VariationService variationService = factory.createVariationService("http://beta.rest.ensembl.org/");
+VariationService variationService = factory.createVariationService();
 VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
 VariationConsequences chr9 = variationService.consequences("human", "9:22125503-22125502:1", "C");
 
 // sequence service
-SequenceService sequenceService = factory.createSequenceService("http://beta.rest.ensembl.org/");
+SequenceService sequenceService = factory.createSequenceService();
 Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
 ```

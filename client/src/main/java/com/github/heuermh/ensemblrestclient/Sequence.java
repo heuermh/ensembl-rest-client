@@ -27,6 +27,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Sequence.
+ *
+ * @since 1.3
  */
 public final class Sequence {
     private final String identifier;

@@ -35,19 +35,70 @@ import retrofit.RestAdapter;
  * @since 1.2
  */
 public final class EnsemblRestClientFactory {
+    private final String defaultServerUrl;
     private final JsonFactory jsonFactory;
 
+    /** Default server URL, <code>http://beta.rest.ensembl.org/</code>. */
+    public static final String DEFAULT_SERVER_URL = "http://beta.rest.ensembl.org/";
 
+
+    /**
+     * Create a new Ensembl REST client factory.
+     */
     public EnsemblRestClientFactory() {
-        this(new JsonFactory());
+        this(DEFAULT_SERVER_URL, new JsonFactory());
     }
 
+    /**
+     * Create a new Ensembl REST client factory with the specified default server URL.
+     *
+     * @param defaultServerUrl default server URL, must not be null
+     * @since 1.3
+     */
+    public EnsemblRestClientFactory(final String defaultServerUrl) {
+        this(defaultServerUrl, new JsonFactory());
+    }
+
+    /**
+     * Create a new Ensembl REST client factory with the specified JsonFactory.
+     *
+     * @param jsonFactory JsonFactory, must not be null
+     */
     public EnsemblRestClientFactory(final JsonFactory jsonFactory) {
+        this(DEFAULT_SERVER_URL, jsonFactory);
+    }
+
+    /**
+     * Create a new Ensembl REST client factory with the specified default server URL and JsonFactory.
+     *
+     * @param defaultServerUrl default server URL, must not be null
+     * @param jsonFactory JsonFactory, must not be null
+     * @since 1.3
+     */
+    public EnsemblRestClientFactory(final String defaultServerUrl, final JsonFactory jsonFactory) {
+        checkNotNull(defaultServerUrl);
         checkNotNull(jsonFactory);
+        this.defaultServerUrl = defaultServerUrl;
         this.jsonFactory = jsonFactory;
     }
 
 
+    /**
+     * Create and return a new feature service with the default server URL.
+     *
+     * @return a new feature service with the default server URL
+     * @since 1.3
+     */
+    public FeatureService createFeatureService() {
+        return createFeatureService(defaultServerUrl);
+    }
+
+    /**
+     * Create and return a new feature service with the specified server URL.
+     *
+     * @param serverUrl server URL, must not be null
+     * @return a new feature service with the specified server URL
+     */
     public FeatureService createFeatureService(final String serverUrl) {
         return new RestAdapter.Builder()
             .setServer(serverUrl)
@@ -55,6 +106,22 @@ public final class EnsemblRestClientFactory {
             .build().create(FeatureService.class);
     }
 
+    /**
+     * C6reate and return a new lookup service with the default server URL.
+     *
+     * @return a new lookup service with the default server URL
+     * @since 1.3
+     */
+    public LookupService createLookupService() {
+        return createLookupService(defaultServerUrl);
+    }
+
+    /**
+     * Create and return a new lookup service with the specified server URL.
+     *
+     * @param serverUrl server URL, must not be null
+     * @return a new lookup service with the specified server URL
+     */
     public LookupService createLookupService(final String serverUrl) {
         return new RestAdapter.Builder()
             .setServer(serverUrl)
@@ -62,6 +129,22 @@ public final class EnsemblRestClientFactory {
             .build().create(LookupService.class);
     }
 
+    /**
+     * Create and return a new variation service with the default server URL.
+     *
+     * @return a new variation service with the default server URL
+     * @since 1.3
+     */
+    public VariationService createVariationService() {
+        return createVariationService(defaultServerUrl);
+    }
+
+    /**
+     * Create and return a new variation service with the specified server URL.
+     *
+     * @param serverUrl server URL, must not be null
+     * @return a new variation service with the specified server URL
+     */
     public VariationService createVariationService(final String serverUrl) {
         return new RestAdapter.Builder()
             .setServer(serverUrl)
@@ -69,6 +152,23 @@ public final class EnsemblRestClientFactory {
             .build().create(VariationService.class);
     }
 
+    /**
+     * Create and return a new sequence service with the default server URL.
+     *
+     * @return a new sequence service with the default server URL
+     * @since 1.3
+     */
+    public SequenceService createSequenceService() {
+        return createSequenceService(defaultServerUrl);
+    }
+
+    /**
+     * Create and return a new sequence service with the specified server URL.
+     *
+     * @param serverUrl server URL, must not be null
+     * @return a new sequence service with the specified server URL
+     * @since 1.3
+     */
     public SequenceService createSequenceService(final String serverUrl) {
         return new RestAdapter.Builder()
             .setServer(serverUrl)

@@ -30,6 +30,8 @@ import retrofit.http.Query;
 
 /**
  * Sequence service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
+ *
+ * @since 1.3
  */
 public interface SequenceService {
 

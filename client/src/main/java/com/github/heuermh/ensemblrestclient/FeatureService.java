@@ -35,10 +35,24 @@ import retrofit.http.Query;
  */
 public interface FeatureService {
 
+    /**
+     * Return the variation feature with the specified identifier.
+     *
+     * @param species species
+     * @param id id
+     * @return the variation feature with the specified identifier
+     */
     @GET("/feature/id/{id}?feature=variation")
     @Headers("Content-type: application/json")
     Variation variationFeature(@Query("species") String species, @Path("id") String id);
 
+    /**
+     * Return zero or more variation features that overlap with the specified region.
+     *
+     * @param species species
+     * @param region region
+     * @return zero or more variation features that overlap with the specified region
+     */
     @GET("/feature/region/{species}/{region}?feature=variation")
     @Headers("Content-type: application/json")
     List<Variation> variationFeatures(@Path("species") String species, @Path("region") String region);
