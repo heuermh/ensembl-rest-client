@@ -138,3 +138,6 @@ VariationConsequences chr9 = variationService.consequences("human", "9:22125503-
 SequenceService sequenceService = factory.createSequenceService();
 Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
 ```
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/heuermh/ensembl-rest-client/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
