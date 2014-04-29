@@ -35,6 +35,8 @@ import org.junit.Test;
 
 /**
  * Unit test for Variation.
+ *
+ * @author  Michael Heuer
  */
 public final class VariationTest {
     private Variation variation;

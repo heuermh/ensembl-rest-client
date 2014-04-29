@@ -45,6 +45,8 @@ import retrofit.mime.TypedInput;
 
 /**
  * Unit test for JacksonSequenceConverter.
+ *
+ * @author  Michael Heuer
  */
 public final class JacksonSequenceConverterTest {
     private JsonFactory jsonFactory;

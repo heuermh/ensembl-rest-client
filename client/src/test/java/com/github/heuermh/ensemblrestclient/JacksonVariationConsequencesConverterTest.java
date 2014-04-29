@@ -44,6 +44,8 @@ import retrofit.mime.TypedInput;
 
 /**
  * Unit test for JacksonVariationConsequencesConverter.
+ *
+ * @author  Michael Heuer
  */
 public final class JacksonVariationConsequencesConverterTest {
     private JsonFactory jsonFactory;

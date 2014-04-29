@@ -34,6 +34,8 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Unit test for VariationConsequences.
+ *
+ * @author  Michael Heuer
  */
 public final class VariationConsequencesTest {
     private Location location;

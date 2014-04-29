@@ -47,6 +47,8 @@ import retrofit.mime.TypedInput;
 
 /**
  * Unit test for JacksonFeatureConverter.
+ *
+ * @author  Michael Heuer
  */
 public final class JacksonFeatureConverterTest {
     private JsonFactory jsonFactory;

@@ -33,6 +33,8 @@ import org.junit.Test;
 
 /**
  * Unit test for EnsemblRestClientModule.
+ *
+ * @author  Michael Heuer
  */
 public final class EnsemblRestClientModuleTest {
     private EnsemblRestClientModule module;

@@ -31,6 +31,8 @@ import org.junit.Test;
 
 /**
  * Unit test for Sequence.
+ *
+ * @author  Michael Heuer
  */
 public final class SequenceTest {
     private Sequence sequence;

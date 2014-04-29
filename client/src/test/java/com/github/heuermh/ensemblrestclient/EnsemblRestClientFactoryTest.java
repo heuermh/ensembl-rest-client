@@ -32,6 +32,8 @@ import org.junit.Test;
 
 /**
  * Unit test for EnsemblRestClientFactory.
+ *
+ * @author  Michael Heuer
  */
 public final class EnsemblRestClientFactoryTest {
     private EnsemblRestClientFactory factory;

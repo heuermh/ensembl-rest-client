@@ -44,6 +44,8 @@ import retrofit.mime.TypedInput;
 
 /**
  * Unit test for JacksonLookupConverter.
+ *
+ * @author  Michael Heuer
  */
 public final class JacksonLookupConverterTest {
     private JsonFactory jsonFactory;

@@ -35,6 +35,8 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Unit test for Transcript.
+ *
+ * @author  Michael Heuer
  */
 public final class TranscriptTest {
     private Allele allele;

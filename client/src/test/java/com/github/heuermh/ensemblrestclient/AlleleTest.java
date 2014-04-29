@@ -34,6 +34,8 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Unit test for Allele.
+ *
+ * @author  Michael Heuer
  */
 public final class AlleleTest {
     private Allele allele;

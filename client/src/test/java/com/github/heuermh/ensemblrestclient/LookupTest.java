@@ -31,6 +31,8 @@ import org.junit.Test;
 
 /**
  * Unit test for Lookup.
+ *
+ * @author  Michael Heuer
  */
 public final class LookupTest {
     private Lookup lookup;

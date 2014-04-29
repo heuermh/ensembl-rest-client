@@ -31,6 +31,8 @@ import org.junit.Test;
 
 /**
  * Unit test for Location.
+ *
+ * @author  Michael Heuer
  */
 public final class LocationTest {
     private Location location;
