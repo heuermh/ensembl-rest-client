@@ -104,6 +104,7 @@ public final class EnsemblRestClientFactory {
         return new RestAdapter.Builder()
             .setServer(serverUrl)
             .setConverter(new JacksonFeatureConverter(jsonFactory))
+            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(FeatureService.class);
     }
 
@@ -127,6 +128,7 @@ public final class EnsemblRestClientFactory {
         return new RestAdapter.Builder()
             .setServer(serverUrl)
             .setConverter(new JacksonLookupConverter(jsonFactory))
+            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(LookupService.class);
     }
 
@@ -150,6 +152,7 @@ public final class EnsemblRestClientFactory {
         return new RestAdapter.Builder()
             .setServer(serverUrl)
             .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))
+            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(VariationService.class);
     }
 
@@ -174,6 +177,7 @@ public final class EnsemblRestClientFactory {
         return new RestAdapter.Builder()
             .setServer(serverUrl)
             .setConverter(new JacksonSequenceConverter(jsonFactory))
+            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(SequenceService.class);
     }
 }

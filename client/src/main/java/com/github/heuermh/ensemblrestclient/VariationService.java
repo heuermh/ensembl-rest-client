@@ -41,6 +41,7 @@ public interface VariationService {
      * @param species registry name/aliases used to restrict searches by
      * @param id variation id to look up; supports dbSNP, COSMIC, and HGMD identifiers
      * @return variant consequences for the specified species and variation identifier
+     * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/vep/{species}/id/{id}/consequences")
     @Headers("Content-type: application/json")
@@ -54,6 +55,7 @@ public interface VariationService {
      * @param region region to mutate in the specified genome
      * @param allele allele to change the reference genome to
      * @return variant consequences for the specified species, region, and allele
+     * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/vep/{species}/{region}/{allele}/consequences")
     @Headers("Content-type: application/json")

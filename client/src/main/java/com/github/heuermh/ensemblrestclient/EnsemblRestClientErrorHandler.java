@@ -23,28 +23,19 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
-import retrofit.http.GET;
-import retrofit.http.Headers;
-import retrofit.http.Path;
-import retrofit.http.Query;
+import retrofit.ErrorHandler;
+import retrofit.RetrofitError;
 
 /**
- * Lookup service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
+ * Ensembl REST client error handler.
  *
+ * @since 1.4
  * @author  Michael Heuer
  */
-public interface LookupService {
-
-    /**
-     * Query for an identifier's location in the available Ensembl databases.
-     * See <a href="http://beta.rest.ensembl.org/documentation/info/lookup">http://beta.rest.ensembl.org/documentation/info/lookup</a>.
-     *
-     * @param species species
-     * @param id id
-     * @return location in the available Ensembl databases for the specified identifier
-     * @throws EnsemblRestClientException if an error occurs
-     */
-    @GET("/lookup/id/{id}?format=full")
-    @Headers("Content-type: application/json")
-    Lookup lookup(@Query("species") String species, @Path("id") String id);
+final class EnsemblRestClientErrorHandler implements ErrorHandler {
+    @Override
+    public Throwable handleError(final RetrofitError cause) {
+        return new EnsemblRestClientException(cause);
+    }
 }
+

@@ -43,6 +43,7 @@ public interface FeatureService {
      * @param species species
      * @param id id
      * @return the variation feature with the specified identifier
+     * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/feature/id/{id}?feature=variation")
     @Headers("Content-type: application/json")
@@ -54,6 +55,7 @@ public interface FeatureService {
      * @param species species
      * @param region region
      * @return zero or more variation features that overlap with the specified region
+     * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/feature/region/{species}/{region}?feature=variation")
     @Headers("Content-type: application/json")

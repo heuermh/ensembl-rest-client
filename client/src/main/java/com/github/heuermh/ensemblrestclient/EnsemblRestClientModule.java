@@ -54,6 +54,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
         return new RestAdapter.Builder()
             .setServer("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonFeatureConverter(jsonFactory))
+            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(FeatureService.class);
     }
 
@@ -62,6 +63,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
         return new RestAdapter.Builder()
             .setServer("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonLookupConverter(jsonFactory))
+            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(LookupService.class);
     }
 
@@ -70,6 +72,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
         return new RestAdapter.Builder()
             .setServer("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))
+            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(VariationService.class);
     }
 
@@ -78,6 +81,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
         return new RestAdapter.Builder()
             .setServer("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonSequenceConverter(jsonFactory))
+            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(SequenceService.class);
     }
 }

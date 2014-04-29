@@ -44,6 +44,7 @@ public interface SequenceService {
      * @param id id
      * @param type type
      * @return sequence for the specified identifier
+     * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/sequence/id/{id}")
     @Headers("Content-type: application/json")
@@ -60,6 +61,7 @@ public interface SequenceService {
      * @param expand3Prime expand the sequence downstream of the sequence by this many basepairs, only valid if type is genomic
      * @param mask request the sequence masked for repeat sequences, hard will mask all repeats as N's and soft will mask repeats as lowercased characters, only valid if type is genomic
      * @return sequence for the specified identifier
+     * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/sequence/id/{id}?type=genomic")
     @Headers("Content-type: application/json")
@@ -77,6 +79,7 @@ public interface SequenceService {
      * @param species species
      * @param region region
      * @return genomic sequence for the specified region
+     * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/sequence/region/{species}/{region}")
     @Headers("Content-type: application/json")
@@ -92,6 +95,7 @@ public interface SequenceService {
      * @param expand3Prime expand the sequence downstream of the sequence by this many basepairs
      * @param mask request the sequence masked for repeat sequences, hard will mask all repeats as N's and soft will mask repeats as lowercased characters
      * @return genomic sequence for the specified region
+     * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/sequence/region/{species}/{region}")
     @Headers("Content-type: application/json")
