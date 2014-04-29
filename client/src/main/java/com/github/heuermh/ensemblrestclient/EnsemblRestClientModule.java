@@ -33,6 +33,8 @@ import retrofit.RestAdapter;
 
 /**
  * Ensembl REST client module.
+ *
+ * @author  Michael Heuer
  */
 public final class EnsemblRestClientModule extends AbstractModule {
     // todo:  allow server URL as configurable property

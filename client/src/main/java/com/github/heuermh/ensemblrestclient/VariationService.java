@@ -29,6 +29,8 @@ import retrofit.http.Path;
 
 /**
  * Variation service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
+ *
+ * @author  Michael Heuer
  */
 public interface VariationService {
 

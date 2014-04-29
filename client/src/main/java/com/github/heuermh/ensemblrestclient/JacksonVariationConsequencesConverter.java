@@ -45,6 +45,8 @@ import retrofit.mime.TypedOutput;
 
 /**
  * Variation consequences converter built with Jackson.
+ *
+ * @author  Michael Heuer
  */
 final class JacksonVariationConsequencesConverter implements Converter {
     private final JsonFactory jsonFactory;

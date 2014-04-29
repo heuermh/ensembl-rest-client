@@ -31,6 +31,8 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Transcript.
+ *
+ * @author  Michael Heuer
  */
 public final class Transcript {
     private final String name;

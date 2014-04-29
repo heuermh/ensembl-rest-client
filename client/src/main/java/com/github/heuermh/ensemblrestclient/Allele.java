@@ -31,6 +31,8 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Allele.
+ *
+ * @author  Michael Heuer
  */
 public final class Allele {
     private final String alleleString;

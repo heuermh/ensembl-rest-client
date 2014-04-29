@@ -45,6 +45,8 @@ import retrofit.mime.TypedOutput;
 
 /**
  * Feature converter built with Jackson.
+ *
+ * @author  Michael Heuer
  */
 final class JacksonFeatureConverter implements Converter {
     private final JsonFactory jsonFactory;

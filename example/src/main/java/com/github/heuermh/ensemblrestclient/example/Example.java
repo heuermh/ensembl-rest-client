@@ -41,6 +41,8 @@ import com.google.inject.Injector;
 
 /**
  * Example.
+ *
+ * @author  Michael Heuer
  */
 public final class Example {
 

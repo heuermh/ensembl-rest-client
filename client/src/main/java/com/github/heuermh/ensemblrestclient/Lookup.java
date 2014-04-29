@@ -27,6 +27,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Lookup.
+ *
+ * @author  Michael Heuer
  */
 public final class Lookup {
     private final String identifier;

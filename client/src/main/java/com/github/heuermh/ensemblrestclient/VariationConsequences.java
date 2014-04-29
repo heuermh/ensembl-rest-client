@@ -31,6 +31,8 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Variation consequences.
+ *
+ * @author  Michael Heuer
  */
 public final class VariationConsequences {
     private final String name;

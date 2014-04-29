@@ -33,6 +33,7 @@ import retrofit.RestAdapter;
  * Ensembl REST client factory, for clients unable to use Guice injection.
  *
  * @since 1.2
+ * @author  Michael Heuer
  */
 public final class EnsemblRestClientFactory {
     private final String defaultServerUrl;

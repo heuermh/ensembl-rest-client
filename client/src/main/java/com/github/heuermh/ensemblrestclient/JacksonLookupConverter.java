@@ -42,6 +42,8 @@ import retrofit.mime.TypedOutput;
 
 /**
  * Lookup converter built with Jackson.
+ *
+ * @author  Michael Heuer
  */
 final class JacksonLookupConverter implements Converter {
     private final JsonFactory jsonFactory;

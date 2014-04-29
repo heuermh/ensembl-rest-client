@@ -44,6 +44,7 @@ import retrofit.mime.TypedOutput;
  * Sequence converter built with Jackson.
  *
  * @since 1.3
+ * @author  Michael Heuer
  */
 final class JacksonSequenceConverter implements Converter {
     private final JsonFactory jsonFactory;

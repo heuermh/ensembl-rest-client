@@ -27,6 +27,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Location.
+ *
+ * @author  Michael Heuer
  */
 public final class Location {
     private final String name;

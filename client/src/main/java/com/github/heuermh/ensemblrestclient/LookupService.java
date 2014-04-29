@@ -30,6 +30,8 @@ import retrofit.http.Query;
 
 /**
  * Lookup service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
+ *
+ * @author  Michael Heuer
  */
 public interface LookupService {
 

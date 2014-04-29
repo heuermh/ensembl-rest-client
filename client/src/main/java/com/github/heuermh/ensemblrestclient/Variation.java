@@ -31,6 +31,8 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Variation.
+ *
+ * @author  Michael Heuer
  */
 public final class Variation {
     private final String identifier;

@@ -29,6 +29,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Sequence.
  *
  * @since 1.3
+ * @author  Michael Heuer
  */
 public final class Sequence {
     private final String identifier;
