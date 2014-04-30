@@ -23,6 +23,8 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import retrofit.RetrofitError;
 
 /**
@@ -38,10 +40,11 @@ public final class EnsemblRestClientException extends RuntimeException {
     /**
      * Create a new Ensembl REST client runtime exception wrapping the specified Retrofit error.
      *
-     * @param retrofitError retrofit error
+     * @param retrofitError retrofit error, must not be null
      */
     EnsemblRestClientException(final RetrofitError retrofitError) {
         super(retrofitError);
+        checkNotNull(retrofitError);
         this.retrofitError = retrofitError;
     }
 
