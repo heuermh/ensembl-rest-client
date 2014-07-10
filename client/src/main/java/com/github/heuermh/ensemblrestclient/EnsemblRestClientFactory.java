@@ -36,28 +36,35 @@ import retrofit.RestAdapter;
  * @author  Michael Heuer
  */
 public final class EnsemblRestClientFactory {
-    private final String defaultServerUrl;
+    private final String defaultEndpointUrl;
     private final JsonFactory jsonFactory;
 
-    /** Default server URL, <code>http://beta.rest.ensembl.org/</code>. */
-    public static final String DEFAULT_SERVER_URL = "http://beta.rest.ensembl.org/";
+    /**
+     * Default endpoint URL, <code>http://beta.rest.ensembl.org/</code>.
+     *
+     * @since 1.3
+     */
+    public static final String DEFAULT_ENDPOINT_URL = "http://beta.rest.ensembl.org/";
+
+    @Deprecated
+    public static final String DEFAULT_SERVER_URL = DEFAULT_ENDPOINT_URL;
 
 
     /**
      * Create a new Ensembl REST client factory.
      */
     public EnsemblRestClientFactory() {
-        this(DEFAULT_SERVER_URL, new JsonFactory());
+        this(DEFAULT_ENDPOINT_URL, new JsonFactory());
     }
 
     /**
-     * Create a new Ensembl REST client factory with the specified default server URL.
+     * Create a new Ensembl REST client factory with the specified default endpoint URL.
      *
-     * @param defaultServerUrl default server URL, must not be null
+     * @param defaultEndpointUrl default endpoint URL, must not be null
      * @since 1.3
      */
-    public EnsemblRestClientFactory(final String defaultServerUrl) {
-        this(defaultServerUrl, new JsonFactory());
+    public EnsemblRestClientFactory(final String defaultEndpointUrl) {
+        this(defaultEndpointUrl, new JsonFactory());
     }
 
     /**
@@ -66,116 +73,116 @@ public final class EnsemblRestClientFactory {
      * @param jsonFactory JsonFactory, must not be null
      */
     public EnsemblRestClientFactory(final JsonFactory jsonFactory) {
-        this(DEFAULT_SERVER_URL, jsonFactory);
+        this(DEFAULT_ENDPOINT_URL, jsonFactory);
     }
 
     /**
-     * Create a new Ensembl REST client factory with the specified default server URL and JsonFactory.
+     * Create a new Ensembl REST client factory with the specified default endpoint URL and JsonFactory.
      *
-     * @param defaultServerUrl default server URL, must not be null
+     * @param defaultEndpointUrl default endpoint URL, must not be null
      * @param jsonFactory JsonFactory, must not be null
      * @since 1.3
      */
-    public EnsemblRestClientFactory(final String defaultServerUrl, final JsonFactory jsonFactory) {
-        checkNotNull(defaultServerUrl);
+    public EnsemblRestClientFactory(final String defaultEndpointUrl, final JsonFactory jsonFactory) {
+        checkNotNull(defaultEndpointUrl);
         checkNotNull(jsonFactory);
-        this.defaultServerUrl = defaultServerUrl;
+        this.defaultEndpointUrl = defaultEndpointUrl;
         this.jsonFactory = jsonFactory;
     }
 
 
     /**
-     * Create and return a new feature service with the default server URL.
+     * Create and return a new feature service with the default endpoint URL.
      *
-     * @return a new feature service with the default server URL
+     * @return a new feature service with the default endpoint URL
      * @since 1.3
      */
     public FeatureService createFeatureService() {
-        return createFeatureService(defaultServerUrl);
+        return createFeatureService(defaultEndpointUrl);
     }
 
     /**
-     * Create and return a new feature service with the specified server URL.
+     * Create and return a new feature service with the specified endpoint URL.
      *
-     * @param serverUrl server URL, must not be null
-     * @return a new feature service with the specified server URL
+     * @param endpointUrl endpoint URL, must not be null
+     * @return a new feature service with the specified endpoint URL
      */
-    public FeatureService createFeatureService(final String serverUrl) {
+    public FeatureService createFeatureService(final String endpointUrl) {
         return new RestAdapter.Builder()
-            .setServer(serverUrl)
+            .setEndpoint(endpointUrl)
             .setConverter(new JacksonFeatureConverter(jsonFactory))
             .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(FeatureService.class);
     }
 
     /**
-     * C6reate and return a new lookup service with the default server URL.
+     * C6reate and return a new lookup service with the default endpoint URL.
      *
-     * @return a new lookup service with the default server URL
+     * @return a new lookup service with the default endpoint URL
      * @since 1.3
      */
     public LookupService createLookupService() {
-        return createLookupService(defaultServerUrl);
+        return createLookupService(defaultEndpointUrl);
     }
 
     /**
-     * Create and return a new lookup service with the specified server URL.
+     * Create and return a new lookup service with the specified endpoint URL.
      *
-     * @param serverUrl server URL, must not be null
-     * @return a new lookup service with the specified server URL
+     * @param endpointUrl endpoint URL, must not be null
+     * @return a new lookup service with the specified endpoint URL
      */
-    public LookupService createLookupService(final String serverUrl) {
+    public LookupService createLookupService(final String endpointUrl) {
         return new RestAdapter.Builder()
-            .setServer(serverUrl)
+            .setEndpoint(endpointUrl)
             .setConverter(new JacksonLookupConverter(jsonFactory))
             .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(LookupService.class);
     }
 
     /**
-     * Create and return a new variation service with the default server URL.
+     * Create and return a new variation service with the default endpoint URL.
      *
-     * @return a new variation service with the default server URL
+     * @return a new variation service with the default endpoint URL
      * @since 1.3
      */
     public VariationService createVariationService() {
-        return createVariationService(defaultServerUrl);
+        return createVariationService(defaultEndpointUrl);
     }
 
     /**
-     * Create and return a new variation service with the specified server URL.
+     * Create and return a new variation service with the specified endpoint URL.
      *
-     * @param serverUrl server URL, must not be null
-     * @return a new variation service with the specified server URL
+     * @param endpointUrl endpoint URL, must not be null
+     * @return a new variation service with the specified endpoint URL
      */
-    public VariationService createVariationService(final String serverUrl) {
+    public VariationService createVariationService(final String endpointUrl) {
         return new RestAdapter.Builder()
-            .setServer(serverUrl)
+            .setEndpoint(endpointUrl)
             .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))
             .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(VariationService.class);
     }
 
     /**
-     * Create and return a new sequence service with the default server URL.
+     * Create and return a new sequence service with the default endpoint URL.
      *
-     * @return a new sequence service with the default server URL
+     * @return a new sequence service with the default endpoint URL
      * @since 1.3
      */
     public SequenceService createSequenceService() {
-        return createSequenceService(defaultServerUrl);
+        return createSequenceService(defaultEndpointUrl);
     }
 
     /**
-     * Create and return a new sequence service with the specified server URL.
+     * Create and return a new sequence service with the specified endpoint URL.
      *
-     * @param serverUrl server URL, must not be null
-     * @return a new sequence service with the specified server URL
+     * @param endpointUrl endpoint URL, must not be null
+     * @return a new sequence service with the specified endpoint URL
      * @since 1.3
      */
-    public SequenceService createSequenceService(final String serverUrl) {
+    public SequenceService createSequenceService(final String endpointUrl) {
         return new RestAdapter.Builder()
-            .setServer(serverUrl)
+            .setEndpoint(endpointUrl)
             .setConverter(new JacksonSequenceConverter(jsonFactory))
             .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(SequenceService.class);

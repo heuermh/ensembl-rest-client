@@ -40,6 +40,8 @@ import retrofit.RetrofitError;
 import retrofit.client.Header;
 import retrofit.client.Response;
 
+import retrofit.converter.ConversionException;
+
 /**
  * Unit test for EnsemblRestClientException.
  *
@@ -55,7 +57,7 @@ public final class EnsemblRestClientExceptionTest {
     @Before
     public void setUp() {
         response = new Response("url", 404, "Not found", Collections.<Header>emptyList(), null);
-        conversionError = RetrofitError.conversionError("url", response, null, null, null);
+        conversionError = RetrofitError.conversionError("url", response, null, null, new ConversionException("message"));
         httpError = RetrofitError.httpError("url", response, null, null);
         networkError = RetrofitError.networkError("url", new IOException());
         unexpectedError = RetrofitError.networkError("url", new IOException());

@@ -37,7 +37,7 @@ import retrofit.RestAdapter;
  * @author  Michael Heuer
  */
 public final class EnsemblRestClientModule extends AbstractModule {
-    // todo:  allow server URL as configurable property
+    // todo:  allow endpoint URL as configurable property
 
     @Override
     protected void configure() {
@@ -52,7 +52,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
     @Provides @Singleton
     static FeatureService createFeatureService(final JsonFactory jsonFactory) {
         return new RestAdapter.Builder()
-            .setServer("http://beta.rest.ensembl.org/")
+            .setEndpoint("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonFeatureConverter(jsonFactory))
             .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(FeatureService.class);
@@ -61,7 +61,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
     @Provides @Singleton
     static LookupService createLookupService(final JsonFactory jsonFactory) {
         return new RestAdapter.Builder()
-            .setServer("http://beta.rest.ensembl.org/")
+            .setEndpoint("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonLookupConverter(jsonFactory))
             .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(LookupService.class);
@@ -70,7 +70,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
     @Provides @Singleton
     static VariationService createVariationService(final JsonFactory jsonFactory) {
         return new RestAdapter.Builder()
-            .setServer("http://beta.rest.ensembl.org/")
+            .setEndpoint("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))
             .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(VariationService.class);
@@ -79,7 +79,7 @@ public final class EnsemblRestClientModule extends AbstractModule {
     @Provides @Singleton
     static SequenceService createSequenceService(final JsonFactory jsonFactory) {
         return new RestAdapter.Builder()
-            .setServer("http://beta.rest.ensembl.org/")
+            .setEndpoint("http://beta.rest.ensembl.org/")
             .setConverter(new JacksonSequenceConverter(jsonFactory))
             .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(SequenceService.class);
