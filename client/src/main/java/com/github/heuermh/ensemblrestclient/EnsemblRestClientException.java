@@ -27,6 +27,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import retrofit.RetrofitError;
 
+import retrofit.client.Header;
+
 /**
  * Ensembl REST client runtime exception.
  *
@@ -87,6 +89,42 @@ public final class EnsemblRestClientException extends RuntimeException {
     public boolean isNetworkError()
     {
         return retrofitError.isNetworkError();
+    }
+
+    /**
+     * Return true if this runtime exception was the result of a HTTP 429 Too Many Requests rate limit error.
+     *
+     * @since 1.5
+     * @return true if this runtime exception was the result of a HTTP 429 Too Many Requests rate limit error
+     */
+    public boolean isRateLimitError()
+    {
+        return getStatus() == 429;
+    }
+
+    /**
+     * Return the number of seconds before the rate limit resets, or <code>-1</code> if the exception was not
+     * the result of a HTTP 429 Too Many Requests rate limit error.
+     *
+     * @since 1.5
+     * @see #isRateLimitError
+     * @return the number of seconds before the rate limit resets, or <code>-1</code> if the exception was not
+     *    the result of a HTTP 429 Too Many Requests rate limit error
+     */
+    public long getRateLimitReset()
+    {
+        if (retrofitError.getResponse() == null)
+        {
+            return -1;
+        }
+        for (Header header : retrofitError.getResponse().getHeaders())
+        {
+            if ("X-RateLimit-Reset".equals(header.getName()))
+            {
+                return Long.parseLong(header.getValue());
+            }
+        }
+        return -1;
     }
 }
 
