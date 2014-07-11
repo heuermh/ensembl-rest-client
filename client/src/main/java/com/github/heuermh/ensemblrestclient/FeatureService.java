@@ -46,7 +46,7 @@ public interface FeatureService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/feature/id/{id}?feature=variation")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     Variation variationFeature(@Query("species") String species, @Path("id") String id);
 
     /**
@@ -58,6 +58,6 @@ public interface FeatureService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/feature/region/{species}/{region}?feature=variation")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     List<Variation> variationFeatures(@Path("species") String species, @Path("region") String region);
 }

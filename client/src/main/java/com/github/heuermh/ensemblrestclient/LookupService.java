@@ -45,6 +45,6 @@ public interface LookupService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/lookup/id/{id}?format=full")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     Lookup lookup(@Query("species") String species, @Path("id") String id);
 }

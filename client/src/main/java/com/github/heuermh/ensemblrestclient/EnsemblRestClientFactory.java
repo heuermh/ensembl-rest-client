@@ -116,7 +116,7 @@ public final class EnsemblRestClientFactory {
     }
 
     /**
-     * C6reate and return a new lookup service with the default endpoint URL.
+     * Create and return a new lookup service with the default endpoint URL.
      *
      * @return a new lookup service with the default endpoint URL
      * @since 1.3

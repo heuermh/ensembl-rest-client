@@ -47,7 +47,7 @@ public interface SequenceService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/sequence/id/{id}")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     Sequence sequence(@Query("species") String species, @Path("id") String id, @Query("type") String type);
 
     /**
@@ -64,7 +64,7 @@ public interface SequenceService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/sequence/id/{id}?type=genomic")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     Sequence sequence(@Query("species") String species,
                       @Path("id") String id,
                       @Query("type") String type,
@@ -82,7 +82,7 @@ public interface SequenceService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/sequence/region/{species}/{region}")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     Sequence sequence(@Path("species") String species, @Path("region") String region);
 
     /**
@@ -98,7 +98,7 @@ public interface SequenceService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/sequence/region/{species}/{region}")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     Sequence sequence(@Path("species") String species,
                       @Path("region") String region,
                       @Query("expand_5prime") int expand5Prime,

@@ -44,7 +44,7 @@ public interface VariationService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/vep/{species}/id/{id}/consequences")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     VariationConsequences consequences(@Path("species") String species, @Path("id") String id);
 
     /**
@@ -58,6 +58,6 @@ public interface VariationService {
      * @throws EnsemblRestClientException if an error occurs
      */
     @GET("/vep/{species}/{region}/{allele}/consequences")
-    @Headers("Content-type: application/json")
+    @Headers("Accept: application/json")
     VariationConsequences consequences(@Path("species") String species, @Path("region") String region, @Path("allele") String allele);
 }
