@@ -23,44 +23,27 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Unit test for EnsemblRestClientModule.
+ * Unit test for ArchivedSequence.
  *
  * @author  Michael Heuer
  */
-public final class EnsemblRestClientModuleTest {
-    private EnsemblRestClientModule module;
+public final class ArchivedSequenceTest {
+    private ArchivedSequence archivedSequence;
 
     @Before
     public void setUp() {
-        module = new EnsemblRestClientModule();
+        archivedSequence = new ArchivedSequence("id", "type", "assembly", "release", "version", "latest", null, true, new String[0]);
     }
 
     @Test
     public void testConstructor() {
-        assertNotNull(module);
-    }
-
-    @Test
-    public void testEnsemblRestClientModule() {
-        Injector injector = Guice.createInjector(module);
-        ArchiveService archiveService = injector.getInstance(ArchiveService.class);
-        FeatureService featureService = injector.getInstance(FeatureService.class);
-        LookupService lookupService = injector.getInstance(LookupService.class);
-        VariationService variationService = injector.getInstance(VariationService.class);
-        SequenceService sequenceService = injector.getInstance(SequenceService.class);
-        assertNotNull(archiveService);
-        assertNotNull(featureService);
-        assertNotNull(lookupService);
-        assertNotNull(variationService);
-        assertNotNull(sequenceService);
+        assertNotNull(archivedSequence);
     }
 }

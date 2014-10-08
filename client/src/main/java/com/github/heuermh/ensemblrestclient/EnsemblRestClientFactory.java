@@ -27,6 +27,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.fasterxml.jackson.core.JsonFactory;
 
+import retrofit.ErrorHandler;
 import retrofit.RestAdapter;
 
 /**
@@ -38,16 +39,14 @@ import retrofit.RestAdapter;
 public final class EnsemblRestClientFactory {
     private final String defaultEndpointUrl;
     private final JsonFactory jsonFactory;
+    private final ErrorHandler errorHandler;
 
     /**
-     * Default endpoint URL, <code>http://beta.rest.ensembl.org/</code>.
+     * Default endpoint URL, <code>http://rest.ensembl.org/</code>.
      *
      * @since 1.3
      */
-    public static final String DEFAULT_ENDPOINT_URL = "http://beta.rest.ensembl.org/";
-
-    @Deprecated
-    public static final String DEFAULT_SERVER_URL = DEFAULT_ENDPOINT_URL;
+    public static final String DEFAULT_ENDPOINT_URL = "http://rest.ensembl.org/";
 
 
     /**
@@ -88,8 +87,34 @@ public final class EnsemblRestClientFactory {
         checkNotNull(jsonFactory);
         this.defaultEndpointUrl = defaultEndpointUrl;
         this.jsonFactory = jsonFactory;
+        this.errorHandler = new EnsemblRestClientErrorHandler();
     }
 
+
+    /**
+     * Create and return a new archive service with the default endpoint URL.
+     *
+     * @return a new archive service with the default endpoint URL
+     * @since 2.0
+     */
+    public ArchiveService createArchiveService() {
+        return createArchiveService(defaultEndpointUrl);
+    }
+
+    /**
+     * Create and return a new archive service with the specified endpoint URL.
+     *
+     * @param endpointUrl endpoint URL, must not be null
+     * @return a new archive service with the specified endpoint URL
+     * @since 2.0
+     */
+    public ArchiveService createArchiveService(final String endpointUrl) {
+        return new RestAdapter.Builder()
+            .setEndpoint(endpointUrl)
+            .setErrorHandler(errorHandler)
+            .setConverter(new JacksonArchivedSequenceConverter(jsonFactory))
+            .build().create(ArchiveService.class);
+    }
 
     /**
      * Create and return a new feature service with the default endpoint URL.
@@ -110,8 +135,8 @@ public final class EnsemblRestClientFactory {
     public FeatureService createFeatureService(final String endpointUrl) {
         return new RestAdapter.Builder()
             .setEndpoint(endpointUrl)
+            .setErrorHandler(errorHandler)
             .setConverter(new JacksonFeatureConverter(jsonFactory))
-            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(FeatureService.class);
     }
 
@@ -134,8 +159,8 @@ public final class EnsemblRestClientFactory {
     public LookupService createLookupService(final String endpointUrl) {
         return new RestAdapter.Builder()
             .setEndpoint(endpointUrl)
+            .setErrorHandler(errorHandler)
             .setConverter(new JacksonLookupConverter(jsonFactory))
-            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(LookupService.class);
     }
 
@@ -158,8 +183,8 @@ public final class EnsemblRestClientFactory {
     public VariationService createVariationService(final String endpointUrl) {
         return new RestAdapter.Builder()
             .setEndpoint(endpointUrl)
+            .setErrorHandler(errorHandler)
             .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))
-            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(VariationService.class);
     }
 
@@ -183,8 +208,8 @@ public final class EnsemblRestClientFactory {
     public SequenceService createSequenceService(final String endpointUrl) {
         return new RestAdapter.Builder()
             .setEndpoint(endpointUrl)
+            .setErrorHandler(errorHandler)
             .setConverter(new JacksonSequenceConverter(jsonFactory))
-            .setErrorHandler(new EnsemblRestClientErrorHandler())
             .build().create(SequenceService.class);
     }
 }

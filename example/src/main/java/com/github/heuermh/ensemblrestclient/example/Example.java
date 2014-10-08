@@ -24,6 +24,8 @@
 package com.github.heuermh.ensemblrestclient.example;
 
 import com.github.heuermh.ensemblrestclient.Allele;
+import com.github.heuermh.ensemblrestclient.ArchivedSequence;
+import com.github.heuermh.ensemblrestclient.ArchiveService;
 import com.github.heuermh.ensemblrestclient.EnsemblRestClientModule;
 import com.github.heuermh.ensemblrestclient.FeatureService;
 import com.github.heuermh.ensemblrestclient.Location;
@@ -48,6 +50,12 @@ public final class Example {
 
     public static void main(final String args[]) {
         Injector injector = Guice.createInjector(new EnsemblRestClientModule());
+
+        ArchiveService archiveService = injector.getInstance(ArchiveService.class);
+
+        System.out.println("\narchived sequence, ");
+        ArchivedSequence archivedSequence = archiveService.archivedSequence("ENSG00000157764");
+        System.out.println(archivedSequence.getId() + "\t" + archivedSequence.getType() + "\t" + archivedSequence.getAssembly() + "\t" + archivedSequence.getRelease() + "\t" + archivedSequence.getVersion() + "\t" + archivedSequence.getLatest());
 
         FeatureService featureService = injector.getInstance(FeatureService.class);
 
