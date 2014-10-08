@@ -27,7 +27,7 @@ To assemble example
 
 To run example
 
-    $ java -jar target/ensembl-rest-client-example-1.4-SNAPSHOT-jar-with-dependencies.jar
+    $ java -jar target/ensembl-rest-client-example-1.6-SNAPSHOT-jar-with-dependencies.jar
     
     features, 7:140424943-140425943
     rs185077298     C       T       7       140424949       140424949       1
@@ -84,7 +84,7 @@ Add the following dependency declaration to your pom.xml
 <dependency>
   <groupId>com.github.heuermh.ensemblrestclient</groupId>
   <artifactId>ensembl-rest-client</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.6-SNAPSHOT</version>
 </dependency>
 ```
 
