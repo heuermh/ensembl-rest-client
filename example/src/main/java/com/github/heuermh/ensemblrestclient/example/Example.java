@@ -27,7 +27,6 @@ import com.github.heuermh.ensemblrestclient.Allele;
 import com.github.heuermh.ensemblrestclient.ArchivedSequence;
 import com.github.heuermh.ensemblrestclient.ArchiveService;
 import com.github.heuermh.ensemblrestclient.EnsemblRestClientModule;
-import com.github.heuermh.ensemblrestclient.FeatureService;
 import com.github.heuermh.ensemblrestclient.Location;
 import com.github.heuermh.ensemblrestclient.Lookup;
 import com.github.heuermh.ensemblrestclient.LookupService;
