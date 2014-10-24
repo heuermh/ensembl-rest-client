@@ -29,7 +29,7 @@ import retrofit.http.Path;
 import retrofit.http.Query;
 
 /**
- * Lookup service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
+ * Lookup service.  See <a href="http://rest.ensembl.org">http://rest.ensembl.org</a>.
  *
  * @author  Michael Heuer
  */
@@ -37,7 +37,7 @@ public interface LookupService {
 
     /**
      * Query for an identifier's location in the available Ensembl databases.
-     * See <a href="http://beta.rest.ensembl.org/documentation/info/lookup">http://beta.rest.ensembl.org/documentation/info/lookup</a>.
+     * See <a href="http://rest.ensembl.org/documentation/info/lookup">http://rest.ensembl.org/documentation/info/lookup</a>.
      *
      * @param species species
      * @param id id

@@ -31,6 +31,7 @@ import com.github.heuermh.ensemblrestclient.FeatureService;
 import com.github.heuermh.ensemblrestclient.Location;
 import com.github.heuermh.ensemblrestclient.Lookup;
 import com.github.heuermh.ensemblrestclient.LookupService;
+import com.github.heuermh.ensemblrestclient.OverlapService;
 import com.github.heuermh.ensemblrestclient.Sequence;
 import com.github.heuermh.ensemblrestclient.SequenceService;
 import com.github.heuermh.ensemblrestclient.Transcript;
@@ -57,22 +58,26 @@ public final class Example {
         ArchivedSequence archivedSequence = archiveService.archivedSequence("ENSG00000157764");
         System.out.println(archivedSequence.getId() + "\t" + archivedSequence.getType() + "\t" + archivedSequence.getAssembly() + "\t" + archivedSequence.getRelease() + "\t" + archivedSequence.getVersion() + "\t" + archivedSequence.getLatest());
 
-        FeatureService featureService = injector.getInstance(FeatureService.class);
-
-        System.out.println("\nfeatures, 7:140424943-140425943");
-        for (Variation variation : featureService.variationFeatures("human", "7:140424943-140425943")) {
-            System.out.println(variation.getIdentifier() + "\t" + variation.getReferenceAllele() + "\t" + variation.getAlternateAlleles() + "\t" + variation.getLocation().getName() + "\t" + variation.getLocation().getStart() + "\t" + variation.getLocation().getEnd() + "\t" + variation.getLocation().getStrand());
-        }
-
         LookupService lookupService = injector.getInstance(LookupService.class);
 
         System.out.println("\nlookup, ENSG00000157764");
         Lookup ensg00000157764 = lookupService.lookup("human", "ENSG00000157764");
         System.out.println(ensg00000157764.getIdentifier() + "\t" + ensg00000157764.getSpecies() + "\t" + ensg00000157764.getType() + "\t" + ensg00000157764.getDatabase() + "\t" + ensg00000157764.getLocation().getName() + "\t" + ensg00000157764.getLocation().getStart() + "\t" + ensg00000157764.getLocation().getEnd() + "\t" + ensg00000157764.getLocation().getStrand());
 
+        OverlapService overlapService = injector.getInstance(OverlapService.class);
+
+        System.out.println("\noverlapping variations, 7:140424943-140425043");
+        for (Variation variation : overlapService.variations("human", "7:140424943-140425043")) {
+            System.out.println(variation.getIdentifier() + "\t" + variation.getReferenceAllele() + "\t" + variation.getAlternateAlleles() + "\t" + variation.getLocation().getName() + "\t" + variation.getLocation().getStart() + "\t" + variation.getLocation().getEnd() + "\t" + variation.getLocation().getStrand());
+        }
+
         VariationService variationService = injector.getInstance(VariationService.class);
 
-        System.out.println("\nid search, COSM476");
+        System.out.println("\nvariation, rs376247534");
+        Variation rs376247534 = variationService.variation("human", "rs376247534");
+        System.out.println(rs376247534.getIdentifier() + "\t" + rs376247534.getReferenceAllele() + "\t" + rs376247534.getAlternateAlleles() + "\t" + rs376247534.getLocation().getName() + "\t" + rs376247534.getLocation().getStart() + "\t" + rs376247534.getLocation().getEnd() + "\t" + rs376247534.getLocation().getStrand());
+
+        System.out.println("\nconsequences id search, COSM476");
         VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
 
         for (Transcript transcript : cosm476.getTranscripts()) {
@@ -84,8 +89,8 @@ public final class Example {
             }
         }
 
-        System.out.println("\nregion search, 9:22125503-22125502:1");
-        VariationConsequences region = variationService.consequences("human", "9:22125503-22125502:1", "C");
+        System.out.println("\nconsequences region search, 9:22125502-22125502:1");
+        VariationConsequences region = variationService.consequences("human", "9:22125502-22125502:1", "C");
 
         for (Transcript transcript : region.getTranscripts()) {
             for (Allele allele : transcript.getAlleles()) {

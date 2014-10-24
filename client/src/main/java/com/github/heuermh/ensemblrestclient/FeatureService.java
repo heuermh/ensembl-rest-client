@@ -31,9 +31,10 @@ import retrofit.http.Path;
 import retrofit.http.Query;
 
 /**
- * Feature service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
+ * Feature service.  See <a href="http://rest.ensembl.org">http://rest.ensembl.org</a>.
  *
  * @author  Michael Heuer
+ * @deprecated will be removed in version 2.0
  */
 public interface FeatureService {
 
@@ -44,20 +45,9 @@ public interface FeatureService {
      * @param id id
      * @return the variation feature with the specified identifier
      * @throws EnsemblRestClientException if an error occurs
+     * @deprecated by {@link VariationService#variation}, will be removed in version 2.0
      */
-    @GET("/feature/id/{id}?feature=variation")
+    @GET("/variation/{species}/{id}")
     @Headers("Accept: application/json")
-    Variation variationFeature(@Query("species") String species, @Path("id") String id);
-
-    /**
-     * Return zero or more variation features that overlap with the specified region.
-     *
-     * @param species species
-     * @param region region
-     * @return zero or more variation features that overlap with the specified region
-     * @throws EnsemblRestClientException if an error occurs
-     */
-    @GET("/feature/region/{species}/{region}?feature=variation")
-    @Headers("Accept: application/json")
-    List<Variation> variationFeatures(@Path("species") String species, @Path("region") String region);
+    Variation variationFeature(@Path("species") String species, @Path("id") String id);
 }

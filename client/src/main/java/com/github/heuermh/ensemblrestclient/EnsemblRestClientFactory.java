@@ -59,8 +59,8 @@ public final class EnsemblRestClientFactory {
     /**
      * Create a new Ensembl REST client factory with the specified default endpoint URL.
      *
-     * @param defaultEndpointUrl default endpoint URL, must not be null
      * @since 1.3
+     * @param defaultEndpointUrl default endpoint URL, must not be null
      */
     public EnsemblRestClientFactory(final String defaultEndpointUrl) {
         this(defaultEndpointUrl, new JsonFactory());
@@ -78,9 +78,9 @@ public final class EnsemblRestClientFactory {
     /**
      * Create a new Ensembl REST client factory with the specified default endpoint URL and JsonFactory.
      *
+     * @since 1.3
      * @param defaultEndpointUrl default endpoint URL, must not be null
      * @param jsonFactory JsonFactory, must not be null
-     * @since 1.3
      */
     public EnsemblRestClientFactory(final String defaultEndpointUrl, final JsonFactory jsonFactory) {
         checkNotNull(defaultEndpointUrl);
@@ -94,8 +94,8 @@ public final class EnsemblRestClientFactory {
     /**
      * Create and return a new archive service with the default endpoint URL.
      *
-     * @return a new archive service with the default endpoint URL
      * @since 2.0
+     * @return a new archive service with the default endpoint URL
      */
     public ArchiveService createArchiveService() {
         return createArchiveService(defaultEndpointUrl);
@@ -104,9 +104,9 @@ public final class EnsemblRestClientFactory {
     /**
      * Create and return a new archive service with the specified endpoint URL.
      *
+     * @since 2.0
      * @param endpointUrl endpoint URL, must not be null
      * @return a new archive service with the specified endpoint URL
-     * @since 2.0
      */
     public ArchiveService createArchiveService(final String endpointUrl) {
         return new RestAdapter.Builder()
@@ -120,7 +120,7 @@ public final class EnsemblRestClientFactory {
      * Create and return a new feature service with the default endpoint URL.
      *
      * @return a new feature service with the default endpoint URL
-     * @since 1.3
+     * @deprecated will be removed in version 2.0
      */
     public FeatureService createFeatureService() {
         return createFeatureService(defaultEndpointUrl);
@@ -131,6 +131,7 @@ public final class EnsemblRestClientFactory {
      *
      * @param endpointUrl endpoint URL, must not be null
      * @return a new feature service with the specified endpoint URL
+     * @deprecated will be removed in version 2.0
      */
     public FeatureService createFeatureService(final String endpointUrl) {
         return new RestAdapter.Builder()
@@ -143,8 +144,8 @@ public final class EnsemblRestClientFactory {
     /**
      * Create and return a new lookup service with the default endpoint URL.
      *
-     * @return a new lookup service with the default endpoint URL
      * @since 1.3
+     * @return a new lookup service with the default endpoint URL
      */
     public LookupService createLookupService() {
         return createLookupService(defaultEndpointUrl);
@@ -165,10 +166,35 @@ public final class EnsemblRestClientFactory {
     }
 
     /**
+     * Create and return a new overlap service with the default endpoint URL.
+     *
+     * @since 2.0
+     * @return a new overlap service with the default endpoint URL
+     */
+    public OverlapService createOverlapService() {
+        return createOverlapService(defaultEndpointUrl);
+    }
+
+    /**
+     * Create and return a new lookup service with the specified endpoint URL.
+     *
+     * @since 2.0
+     * @param endpointUrl endpoint URL, must not be null
+     * @return a new overlap service with the specified endpoint URL
+     */
+    public OverlapService createOverlapService(final String endpointUrl) {
+        return new RestAdapter.Builder()
+            .setEndpoint(endpointUrl)
+            .setErrorHandler(errorHandler)
+            .setConverter(new JacksonOverlapConverter(jsonFactory))
+            .build().create(OverlapService.class);
+    }
+
+    /**
      * Create and return a new variation service with the default endpoint URL.
      *
-     * @return a new variation service with the default endpoint URL
      * @since 1.3
+     * @return a new variation service with the default endpoint URL
      */
     public VariationService createVariationService() {
         return createVariationService(defaultEndpointUrl);
@@ -191,8 +217,8 @@ public final class EnsemblRestClientFactory {
     /**
      * Create and return a new sequence service with the default endpoint URL.
      *
-     * @return a new sequence service with the default endpoint URL
      * @since 1.3
+     * @return a new sequence service with the default endpoint URL
      */
     public SequenceService createSequenceService() {
         return createSequenceService(defaultEndpointUrl);
@@ -201,9 +227,9 @@ public final class EnsemblRestClientFactory {
     /**
      * Create and return a new sequence service with the specified endpoint URL.
      *
+     * @since 1.3
      * @param endpointUrl endpoint URL, must not be null
      * @return a new sequence service with the specified endpoint URL
-     * @since 1.3
      */
     public SequenceService createSequenceService(final String endpointUrl) {
         return new RestAdapter.Builder()

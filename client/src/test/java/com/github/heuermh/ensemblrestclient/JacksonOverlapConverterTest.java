@@ -23,7 +23,7 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
-import static com.github.heuermh.ensemblrestclient.JacksonFeatureConverter.parseFeature;
+import static com.github.heuermh.ensemblrestclient.JacksonOverlapConverter.parseOverlap;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -45,23 +45,23 @@ import retrofit.converter.ConversionException;
 import retrofit.mime.TypedInput;
 
 /**
- * Unit test for JacksonFeatureConverter.
+ * Unit test for JacksonOverlapConverter.
  *
  * @author  Michael Heuer
  */
-public final class JacksonFeatureConverterTest {
+public final class JacksonOverlapConverterTest {
     private JsonFactory jsonFactory;
-    private JacksonFeatureConverter converter;
+    private JacksonOverlapConverter converter;
 
     @Before
     public void setUp() {
         jsonFactory = new JsonFactory();
-        converter = new JacksonFeatureConverter(jsonFactory);
+        converter = new JacksonOverlapConverter(jsonFactory);
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullJsonFactory() {
-        new JacksonFeatureConverter(null);
+        new JacksonOverlapConverter(null);
     }
 
     @Test
@@ -70,18 +70,22 @@ public final class JacksonFeatureConverterTest {
     }
 
     @Test
-    public void testParseFeature_rs56116432() throws Exception {
-        Variation variation = parseFeature(jsonFactory, getClass().getResourceAsStream("rs56116432.json"));
-        assertNotNull(variation);
+    public void testParseOverlap_7_140424943_140624564() throws Exception {
+        List<Variation> overlap = parseOverlap(jsonFactory, getClass().getResourceAsStream("7_140424943-140624564.json"));
+        for (Variation variation : overlap) {
+            assertNotNull(variation);
+        }
     }
 
     @Test
-    public void testFromBodyFeature() throws Exception {
-        InputStream inputStream = getClass().getResourceAsStream("rs56116432.json");
+    public void testFromBodyOverlap() throws Exception {
+        InputStream inputStream = getClass().getResourceAsStream("7_140424943-140624564.json");
         TypedInput body = mock(TypedInput.class);
         when(body.in()).thenReturn(inputStream);
-        Variation variation = (Variation) converter.fromBody(body, Variation.class);
-        assertNotNull(variation);
+        List<Variation> overlap = (List<Variation>) converter.fromBody(body, Variation.class);
+        for (Variation variation : overlap) {
+            assertNotNull(variation);
+        }
     }
 
     @Test(expected=ConversionException.class)

@@ -23,41 +23,31 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
-import retrofit.http.Body;
+import java.util.List;
+
 import retrofit.http.GET;
 import retrofit.http.Headers;
 import retrofit.http.Path;
-import retrofit.http.POST;
+import retrofit.http.Query;
 
 /**
- * Archive service.  See <a href="http://rest.ensembl.org">http://rest.ensembl.org</a>.
+ * Overlap service.  See <a href="http://rest.ensembl.org">http://rest.ensembl.org</a>.
  *
  * @since 2.0
  * @author  Michael Heuer
  */
-public interface ArchiveService {
+public interface OverlapService {
 
     /**
-     * Return an archived sequence with the specified identifier.
-     * See <a href="http://rest.ensembl.org/documentation/info/archive_id_get">http://rest.ensembl.org/documentation/info/archive_id_get</a>.
+     * Return zero or more variations that overlap with the specified region.
+     * See <a href="http://rest.ensembl.org/documentation/info/overlap_region">http://rest.ensembl.org/documentation/info/overlap_region</a>.
      *
-     * @param id id
-     * @return an archived sequence with the specified identifier
+     * @param species species
+     * @param region region
+     * @return zero or more variations that overlap with the specified region
      * @throws EnsemblRestClientException if an error occurs
      */
-    @GET("/archive/id/{id}")
+    @GET("/overlap/region/{species}/{region}?feature=variation")
     @Headers("Accept: application/json")
-    ArchivedSequence archivedSequence(@Path("id") String id);
-
-    /**
-     * Return the archived sequences with the specified identifiers.
-     * See <a href="http://rest.ensembl.org/documentation/info/archive_post_get">http://rest.ensembl.org/documentation/info/archive_id_post</a>.
-     *
-     * @param id zero or more ids
-     * @return the archived sequences with the specified identifiers
-     * @throws EnsemblRestClientException if an error occurs
-     */
-    @POST("/archive/id")
-    @Headers("Accept: application/json")
-    ArchivedSequence archivedSequence(@Body String[] id);
+    List<Variation> variations(@Path("species") String species, @Path("region") String region);
 }

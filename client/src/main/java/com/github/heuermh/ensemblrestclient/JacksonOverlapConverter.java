@@ -44,15 +44,14 @@ import retrofit.mime.TypedInput;
 import retrofit.mime.TypedOutput;
 
 /**
- * Feature converter built with Jackson.
+ * Overlap converter built with Jackson.
  *
  * @author  Michael Heuer
- * @deprecated will be removed in version 2.0
  */
-final class JacksonFeatureConverter implements Converter {
+final class JacksonOverlapConverter implements Converter {
     private final JsonFactory jsonFactory;
 
-    JacksonFeatureConverter(final JsonFactory jsonFactory) {
+    JacksonOverlapConverter(final JsonFactory jsonFactory) {
         checkNotNull(jsonFactory);
         this.jsonFactory = jsonFactory;
     }
@@ -60,10 +59,10 @@ final class JacksonFeatureConverter implements Converter {
     @Override
     public Object fromBody(final TypedInput body, final Type type) throws ConversionException {
         try {
-            return parseFeature(jsonFactory, body.in());
+            return parseOverlap(jsonFactory, body.in());
         }
         catch (IOException e) {
-            throw new ConversionException("could not parse feature", e);
+            throw new ConversionException("could not parse overlap", e);
         }
     }
 
@@ -72,7 +71,7 @@ final class JacksonFeatureConverter implements Converter {
         throw new UnsupportedOperationException("toBody operation not supported");
     }
 
-    static Variation parseFeature(final JsonFactory jsonFactory, final InputStream inputStream) throws IOException {
+    static List<Variation> parseOverlap(final JsonFactory jsonFactory, final InputStream inputStream) throws IOException {
         JsonParser parser = null;
         try {
             parser = jsonFactory.createParser(inputStream);
@@ -81,59 +80,54 @@ final class JacksonFeatureConverter implements Converter {
             String id = null;
             String reference = null;
             List<String> alternateAlleles = new ArrayList<String>();
-
             String locationName = null;
             String coordinateSystem = "chromosome";
             int start = -1;
             int end = -1;
             int strand = -1;
-
-            while (parser.nextToken() != JsonToken.END_OBJECT) {
-                String field = parser.getCurrentName();
-                parser.nextToken();
-                if ("name".equals(field)) {
-                    id = parser.getText();
-                }
-                else if ("mappings".equals(field)) {
-                    // todo:  will only catch last mapping
-                    while (parser.nextToken() != JsonToken.END_ARRAY) {
-                        while (parser.nextToken() != JsonToken.END_OBJECT) {
-                            String mappingsField = parser.getCurrentName();
-                            parser.nextToken();
-
-                            if ("seq_region_name".equals(mappingsField)) {
-                                locationName = parser.getText();
+            List<Variation> variationFeatures = new ArrayList<Variation>();
+            while (parser.nextToken() != JsonToken.END_ARRAY) {
+                while (parser.nextToken() != JsonToken.END_OBJECT) {
+                    String field = parser.getCurrentName();
+                    parser.nextToken();
+                    if ("id".equals(field)) {
+                        id = parser.getText();
+                    }
+                    else if ("seq_region_name".equals(field)) {
+                        locationName = parser.getText();
+                    }
+                    else if ("start".equals(field)) {
+                        start = Integer.parseInt(parser.getText());
+                    }
+                    else if ("end".equals(field)) {
+                        end = Integer.parseInt(parser.getText());
+                    }
+                    else if ("strand".equals(field)) {
+                        strand = Integer.parseInt(parser.getText());
+                    }
+                    else if ("alt_alleles".equals(field)) {
+                        int index = 0;
+                        while (parser.nextToken() != JsonToken.END_ARRAY) {
+                            if (index == 0) {
+                                reference = parser.getText();
                             }
-                            else if ("start".equals(mappingsField)) {
-                                start = Integer.parseInt(parser.getText());
+                            else if (index == 1) {
+                                alternateAlleles.add(parser.getText());
                             }
-                            else if ("end".equals(mappingsField)) {
-                                end = Integer.parseInt(parser.getText());
-                            }
-                            else if ("strand".equals(mappingsField)) {
-                                strand = Integer.parseInt(parser.getText());
-                            }
-                            else if ("allele_string".equals(mappingsField)) {
-                                String[] tokens = parser.getText().split("/");
-                                // todo:  check ref here against ancestral_allele
-                                reference = tokens[0];
-                                alternateAlleles.add(tokens[1]);
-                            }
+                            index++;
                         }
                     }
                 }
-                else if ("synonyms".equals(field)) {
-                     while (parser.nextToken() != JsonToken.END_ARRAY) {
-                         // ignore
-                     }
-                }
-                else if ("evidence".equals(field)) {
-                    while (parser.nextToken() != JsonToken.END_ARRAY) {
-                        // ignore
-                    }
-                }
+                variationFeatures.add(new Variation(id, reference, alternateAlleles, new Location(locationName, coordinateSystem, start, end, strand)));
+                id = null;
+                reference = null;
+                alternateAlleles.clear();
+                locationName = null;
+                start = -1;
+                end = -1;
+                strand = -1;
             }
-            return new Variation(id, reference, alternateAlleles, new Location(locationName, coordinateSystem, start, end, strand));
+            return variationFeatures;
         }
         finally {
             try {

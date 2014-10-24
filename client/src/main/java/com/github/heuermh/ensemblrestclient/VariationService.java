@@ -28,11 +28,25 @@ import retrofit.http.Headers;
 import retrofit.http.Path;
 
 /**
- * Variation service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
+ * Variation service.  See <a href="http://rest.ensembl.org">http://rest.ensembl.org</a>.
  *
  * @author  Michael Heuer
  */
 public interface VariationService {
+
+    /**
+     * Return the variation with the specified identifier.
+     * See <a href="http://rest.ensembl.org/documentation/info/variation_id">http://rest.ensembl.org/documentation/info/variation_id</a>.
+     *
+     * @since 2.0
+     * @param species species
+     * @param id id
+     * @return the variation with the specified identifier
+     * @throws EnsemblRestClientException if an error occurs
+     */
+    @GET("/variation/{species}/{id}")
+    @Headers("Accept: application/json")
+    Variation variation(@Path("species") String species, @Path("id") String id);
 
     /**
      * Fetch variant consequences based on a variation identifier.
@@ -43,7 +57,7 @@ public interface VariationService {
      * @return variant consequences for the specified species and variation identifier
      * @throws EnsemblRestClientException if an error occurs
      */
-    @GET("/vep/{species}/id/{id}/consequences")
+    @GET("/vep/{species}/id/{id}")
     @Headers("Accept: application/json")
     VariationConsequences consequences(@Path("species") String species, @Path("id") String id);
 
@@ -57,7 +71,7 @@ public interface VariationService {
      * @return variant consequences for the specified species, region, and allele
      * @throws EnsemblRestClientException if an error occurs
      */
-    @GET("/vep/{species}/{region}/{allele}/consequences")
+    @GET("/vep/{species}/region/{region}/{allele}")
     @Headers("Accept: application/json")
     VariationConsequences consequences(@Path("species") String species, @Path("region") String region, @Path("allele") String allele);
 }

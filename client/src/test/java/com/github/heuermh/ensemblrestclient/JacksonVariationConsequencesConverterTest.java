@@ -23,6 +23,7 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
+import static com.github.heuermh.ensemblrestclient.JacksonVariationConsequencesConverter.parseVariation;
 import static com.github.heuermh.ensemblrestclient.JacksonVariationConsequencesConverter.parseVariationConsequences;
 
 import static org.junit.Assert.assertNotNull;
@@ -68,17 +69,24 @@ public final class JacksonVariationConsequencesConverterTest {
     }
 
     @Test
+    public void testParseVariation_rs56116432() throws Exception {
+        Variation variation = parseVariation(jsonFactory, getClass().getResourceAsStream("rs56116432.json"));
+        assertNotNull(variation);
+    }
+
+    @Test
     public void testParseVariationConsequences_COSM476() throws Exception {
-        VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("COSM476.json"));
+        VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("COSM476.consequences.json"));
         assertNotNull(vc);
     }
 
     @Test
-    public void testParseVariationConsequences_rs116035550() throws Exception {
-        VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("rs116035550.json"));
+    public void testParseVariationConsequences_rs10244642() throws Exception {
+        VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("rs10244642.consequences.json"));
         assertNotNull(vc);
     }
 
+    /*
     @Test
     public void testParseVariationConsequences_9_22125503_22125502_1_C() throws Exception {
         VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("9_22125503-22125502_1_C.json"));
@@ -90,10 +98,27 @@ public final class JacksonVariationConsequencesConverterTest {
         VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("1_6524705_6524705_T.json"));
         assertNotNull(vc);
     }
+    */
 
     @Test
-    public void testFromBody() throws Exception {
-        InputStream inputStream = getClass().getResourceAsStream("COSM476.json");
+    public void testFromBodyVariation() throws Exception {
+        InputStream inputStream = getClass().getResourceAsStream("rs56116432.json");
+        TypedInput body = mock(TypedInput.class);
+        when(body.in()).thenReturn(inputStream);
+        Variation variation = (Variation) converter.fromBody(body, Variation.class);
+        assertNotNull(variation);
+    }
+
+    @Test(expected=ConversionException.class)
+    public void testFromBodyVariationIOException() throws Exception {
+        TypedInput body = mock(TypedInput.class);
+        when(body.in()).thenThrow(new IOException());
+        converter.fromBody(body, Variation.class);
+    }
+
+    @Test
+    public void testFromBodyVariationConsequences() throws Exception {
+        InputStream inputStream = getClass().getResourceAsStream("rs10244642.consequences.json");
         TypedInput body = mock(TypedInput.class);
         when(body.in()).thenReturn(inputStream);
         VariationConsequences vc = (VariationConsequences) converter.fromBody(body, VariationConsequences.class);
@@ -101,7 +126,7 @@ public final class JacksonVariationConsequencesConverterTest {
     }
 
     @Test(expected=ConversionException.class)
-    public void testFromBodyIOException() throws Exception {
+    public void testFromBodyVariationConsequencesIOException() throws Exception {
         TypedInput body = mock(TypedInput.class);
         when(body.in()).thenThrow(new IOException());
         converter.fromBody(body, VariationConsequences.class);

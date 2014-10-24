@@ -29,7 +29,7 @@ import retrofit.http.Path;
 import retrofit.http.Query;
 
 /**
- * Sequence service.  See <a href="http://beta.rest.ensembl.org">http://beta.rest.ensembl.org</a>.
+ * Sequence service.  See <a href="http://rest.ensembl.org">http://rest.ensembl.org</a>.
  *
  * @since 1.3
  * @author  Michael Heuer
@@ -38,7 +38,7 @@ public interface SequenceService {
 
     /**
      * Query for multiple types of sequence by its stable identifier.
-     * See <a href="http://beta.rest.ensembl.org/documentation/info/sequence_id">http://beta.rest.ensembl.org/documentation/info/sequence_id</a>.
+     * See <a href="http://rest.ensembl.org/documentation/info/sequence_id">http://rest.ensembl.org/documentation/info/sequence_id</a>.
      *
      * @param species species
      * @param id id
@@ -52,7 +52,7 @@ public interface SequenceService {
 
     /**
      * Query for genomic sequence by its stable identifier.
-     * See <a href="http://beta.rest.ensembl.org/documentation/info/sequence_id">http://beta.rest.ensembl.org/documentation/info/sequence_id</a>.
+     * See <a href="http://rest.ensembl.org/documentation/info/sequence_id">http://rest.ensembl.org/documentation/info/sequence_id</a>.
      *
      * @param species species
      * @param id id
@@ -74,7 +74,7 @@ public interface SequenceService {
 
     /**
      * Query for a region of genomic sequence based on its location.
-     * See <a href="http://beta.rest.ensembl.org/documentation/info/sequence_region">http://beta.rest.ensembl.org/documentation/info/sequence_region</a>.
+     * See <a href="http://rest.ensembl.org/documentation/info/sequence_region">http://rest.ensembl.org/documentation/info/sequence_region</a>.
      *
      * @param species species
      * @param region region
@@ -87,7 +87,7 @@ public interface SequenceService {
 
     /**
      * Query for a region of genomic sequence based on its location.
-     * See <a href="http://beta.rest.ensembl.org/documentation/info/sequence_region">http://beta.rest.ensembl.org/documentation/info/sequence_region</a>.
+     * See <a href="http://rest.ensembl.org/documentation/info/sequence_region">http://rest.ensembl.org/documentation/info/sequence_region</a>.
      *
      * @param species species
      * @param region region

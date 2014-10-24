@@ -83,6 +83,15 @@ public final class EnsemblRestClientModule extends AbstractModule {
     }
 
     @Provides @Singleton
+    static OverlapService createOverlapService(@EndpointURL final String endpointUrl, final JsonFactory jsonFactory, final ErrorHandler errorHandler) {
+        return new RestAdapter.Builder()
+            .setEndpoint(endpointUrl)
+            .setErrorHandler(errorHandler)
+            .setConverter(new JacksonOverlapConverter(jsonFactory))
+            .build().create(OverlapService.class);
+    }
+
+    @Provides @Singleton
     static VariationService createVariationService(@EndpointURL final String endpointUrl, final JsonFactory jsonFactory, final ErrorHandler errorHandler) {
         return new RestAdapter.Builder()
             .setEndpoint(endpointUrl)
