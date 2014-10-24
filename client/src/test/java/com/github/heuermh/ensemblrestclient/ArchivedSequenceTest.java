@@ -25,6 +25,8 @@ package com.github.heuermh.ensemblrestclient;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -45,5 +47,14 @@ public final class ArchivedSequenceTest {
     @Test
     public void testConstructor() {
         assertNotNull(archivedSequence);
+        assertEquals("id", archivedSequence.getId());
+        assertEquals("type", archivedSequence.getType());
+        assertEquals("assembly", archivedSequence.getAssembly());
+        assertEquals("release", archivedSequence.getRelease());
+        assertEquals("version", archivedSequence.getVersion());
+        assertEquals("latest", archivedSequence.getLatest());
+        assertNull(archivedSequence.getPeptide());
+        assertTrue(archivedSequence.isCurrent());
+        assertEquals(new String[0], archivedSequence.getPossibleReplacement());
     }
 }
