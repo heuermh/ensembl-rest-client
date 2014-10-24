@@ -108,7 +108,7 @@ or for clients unable to use Guice injection
 
 ```java
 // create a factory
-EnsemblRestClientFactory factory = new EnsemblRestClientFactory("http://beta.rest.ensembl.org/");
+EnsemblRestClientFactory factory = new EnsemblRestClientFactory("http://rest.ensembl.org/");
 
 // lookup service
 LookupService lookupService = factory.createLookupService();
