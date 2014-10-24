@@ -44,14 +44,14 @@ import retrofit.mime.TypedInput;
 import retrofit.mime.TypedOutput;
 
 /**
- * Variation consequences converter built with Jackson.
+ * Variation and variation consequences converter built with Jackson.
  *
  * @author  Michael Heuer
  */
-final class JacksonVariationConsequencesConverter implements Converter {
+final class JacksonVariationConverter implements Converter {
     private final JsonFactory jsonFactory;
 
-    JacksonVariationConsequencesConverter(final JsonFactory jsonFactory) {
+    JacksonVariationConverter(final JsonFactory jsonFactory) {
         checkNotNull(jsonFactory);
         this.jsonFactory = jsonFactory;
     }

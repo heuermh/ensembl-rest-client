@@ -210,7 +210,7 @@ public final class EnsemblRestClientFactory {
         return new RestAdapter.Builder()
             .setEndpoint(endpointUrl)
             .setErrorHandler(errorHandler)
-            .setConverter(new JacksonVariationConsequencesConverter(jsonFactory))
+            .setConverter(new JacksonVariationConverter(jsonFactory))
             .build().create(VariationService.class);
     }
 

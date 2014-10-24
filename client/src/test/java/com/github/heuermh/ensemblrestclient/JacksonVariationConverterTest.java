@@ -23,8 +23,8 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
-import static com.github.heuermh.ensemblrestclient.JacksonVariationConsequencesConverter.parseVariation;
-import static com.github.heuermh.ensemblrestclient.JacksonVariationConsequencesConverter.parseVariationConsequences;
+import static com.github.heuermh.ensemblrestclient.JacksonVariationConverter.parseVariation;
+import static com.github.heuermh.ensemblrestclient.JacksonVariationConverter.parseVariationConsequences;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -44,23 +44,23 @@ import retrofit.converter.ConversionException;
 import retrofit.mime.TypedInput;
 
 /**
- * Unit test for JacksonVariationConsequencesConverter.
+ * Unit test for JacksonVariationConverter.
  *
  * @author  Michael Heuer
  */
-public final class JacksonVariationConsequencesConverterTest {
+public final class JacksonVariationConverterTest {
     private JsonFactory jsonFactory;
-    private JacksonVariationConsequencesConverter converter;
+    private JacksonVariationConverter converter;
 
     @Before
     public void setUp() {
         jsonFactory = new JsonFactory();
-        converter = new JacksonVariationConsequencesConverter(jsonFactory);
+        converter = new JacksonVariationConverter(jsonFactory);
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullJsonFactory() {
-        new JacksonVariationConsequencesConverter(null);
+        new JacksonVariationConverter(null);
     }
 
     @Test
@@ -85,20 +85,6 @@ public final class JacksonVariationConsequencesConverterTest {
         VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("rs10244642.consequences.json"));
         assertNotNull(vc);
     }
-
-    /*
-    @Test
-    public void testParseVariationConsequences_9_22125503_22125502_1_C() throws Exception {
-        VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("9_22125503-22125502_1_C.json"));
-        assertNotNull(vc);
-    }
-
-    @Test
-    public void testParseVariationConsequences_1_6524705_6524705_T() throws Exception {
-        VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("1_6524705_6524705_T.json"));
-        assertNotNull(vc);
-    }
-    */
 
     @Test
     public void testFromBodyVariation() throws Exception {
