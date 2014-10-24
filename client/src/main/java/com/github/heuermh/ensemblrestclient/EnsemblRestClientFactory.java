@@ -117,31 +117,6 @@ public final class EnsemblRestClientFactory {
     }
 
     /**
-     * Create and return a new feature service with the default endpoint URL.
-     *
-     * @return a new feature service with the default endpoint URL
-     * @deprecated will be removed in version 2.0
-     */
-    public FeatureService createFeatureService() {
-        return createFeatureService(defaultEndpointUrl);
-    }
-
-    /**
-     * Create and return a new feature service with the specified endpoint URL.
-     *
-     * @param endpointUrl endpoint URL, must not be null
-     * @return a new feature service with the specified endpoint URL
-     * @deprecated will be removed in version 2.0
-     */
-    public FeatureService createFeatureService(final String endpointUrl) {
-        return new RestAdapter.Builder()
-            .setEndpoint(endpointUrl)
-            .setErrorHandler(errorHandler)
-            .setConverter(new JacksonFeatureConverter(jsonFactory))
-            .build().create(FeatureService.class);
-    }
-
-    /**
      * Create and return a new lookup service with the default endpoint URL.
      *
      * @since 1.3

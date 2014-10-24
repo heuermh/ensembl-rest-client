@@ -94,21 +94,6 @@ public final class EnsemblRestClientFactoryTest {
     }
 
     @Test(expected=NullPointerException.class)
-    public void testCreateFeatureServiceNullServerURL() {
-        factory.createFeatureService(null);
-    }
-
-    @Test
-    public void testCreateFeatureService() {
-        assertNotNull(factory.createFeatureService("http://rest.ensembl.org/"));
-    }
-
-    @Test
-    public void testCreateFeatureServiceDefaultServerUrl() {
-        assertNotNull(factory.createFeatureService());
-    }
-
-    @Test(expected=NullPointerException.class)
     public void testCreateLookupServiceNullServerURL() {
         factory.createLookupService(null);
     }

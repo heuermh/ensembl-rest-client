@@ -65,15 +65,6 @@ public final class EnsemblRestClientModule extends AbstractModule {
     }
 
     @Provides @Singleton
-    static FeatureService createFeatureService(@EndpointURL final String endpointUrl, final JsonFactory jsonFactory, final ErrorHandler errorHandler) {
-        return new RestAdapter.Builder()
-            .setEndpoint(endpointUrl)
-            .setErrorHandler(errorHandler)
-            .setConverter(new JacksonFeatureConverter(jsonFactory))
-            .build().create(FeatureService.class);
-    }
-
-    @Provides @Singleton
     static LookupService createLookupService(@EndpointURL final String endpointUrl, final JsonFactory jsonFactory, final ErrorHandler errorHandler) {
         return new RestAdapter.Builder()
             .setEndpoint(endpointUrl)

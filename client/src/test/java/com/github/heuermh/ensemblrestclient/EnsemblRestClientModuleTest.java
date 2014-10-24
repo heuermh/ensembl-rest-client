@@ -53,14 +53,14 @@ public final class EnsemblRestClientModuleTest {
     public void testEnsemblRestClientModule() {
         Injector injector = Guice.createInjector(module);
         ArchiveService archiveService = injector.getInstance(ArchiveService.class);
-        FeatureService featureService = injector.getInstance(FeatureService.class);
         LookupService lookupService = injector.getInstance(LookupService.class);
-        VariationService variationService = injector.getInstance(VariationService.class);
+        OverlapService overlapService = injector.getInstance(OverlapService.class);
         SequenceService sequenceService = injector.getInstance(SequenceService.class);
+        VariationService variationService = injector.getInstance(VariationService.class);
         assertNotNull(archiveService);
-        assertNotNull(featureService);
         assertNotNull(lookupService);
-        assertNotNull(variationService);
+        assertNotNull(overlapService);
         assertNotNull(sequenceService);
+        assertNotNull(variationService);
     }
 }
