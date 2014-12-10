@@ -30,50 +30,50 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 
 /**
- * Transcript.
+ * Transcript consequences.
  *
  * @author  Michael Heuer
  */
-public final class Transcript {
-    private final String name;
-    private final String biotype;
+public final class TranscriptConsequences {
+    private final int strand;
     private final boolean canonical;
     private final String geneId;
     private final String transcriptId;
     private final String translationId;
-    private final String alleleString;
-    private final List<Allele> alleles;
+    private final String codons;
+    private final String hgvsc;
+    private final String aminoAcids;
+    private final String hgvsp;
+    private final List<String> consequenceTerms;
 
-    Transcript(final String name,
-               final String biotype,
-               final boolean canonical,
-               final String geneId,
-               final String transcriptId,
-               final String translationId,
-               final String alleleString,
-               final List<Allele> alleles) {
+    TranscriptConsequences(final int strand,
+                           final boolean canonical,
+                           final String geneId,
+                           final String transcriptId,
+                           final String translationId,
+                           final String codons,
+                           final String hgvsc,
+                           final String aminoAcids,
+                           final String hgvsp,
+                           final List<String> consequenceTerms) {
 
-        checkNotNull(name);
-        checkNotNull(biotype);
         checkNotNull(transcriptId);
-        checkNotNull(alleles);
+        checkNotNull(consequenceTerms);
 
-        this.name = name;
-        this.biotype = biotype;
+        this.strand = strand;
         this.canonical = canonical;
         this.geneId = geneId;
         this.transcriptId = transcriptId;
         this.translationId = translationId;
-        this.alleleString = alleleString;
-        this.alleles = ImmutableList.copyOf(alleles);
+        this.codons = codons;
+        this.hgvsc = hgvsc;
+        this.aminoAcids = aminoAcids;
+        this.hgvsp = hgvsp;
+        this.consequenceTerms = ImmutableList.copyOf(consequenceTerms);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getBiotype() {
-        return biotype;
+    public int getStrand() {
+        return strand;
     }
 
     public boolean isCanonical() {
@@ -92,11 +92,23 @@ public final class Transcript {
         return translationId;
     }
 
-    public String getAlleleString() {
-        return alleleString;
+    public String getCodons() {
+        return codons;
     }
 
-    public List<Allele> getAlleles() {
-        return alleles;
+    public String getHgvsC() {
+        return hgvsc;
+    }
+
+    public String getAminoAcids() {
+        return aminoAcids;
+    }
+
+    public String getHgvsP() {
+        return hgvsp;
+    }
+
+    public List<String> getConsequenceTerms() {
+        return consequenceTerms;
     }
 }

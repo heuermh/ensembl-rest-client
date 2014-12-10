@@ -62,7 +62,7 @@ final class JacksonVariationConverter implements Converter {
             return Variation.class.equals(type) ? parseVariation(jsonFactory, body.in()) : parseVariationConsequences(jsonFactory, body.in());
         }
         catch (IOException e) {
-            throw new ConversionException("could not parse variation consequences", e);
+            throw new ConversionException("could not parse variation" + (Variation.class.equals(type) ? "" : " consequences"), e);
         }
     }
 
@@ -77,8 +77,8 @@ final class JacksonVariationConverter implements Converter {
             parser = jsonFactory.createParser(inputStream);
             parser.nextToken();
 
-            String id = null;
-            String reference = null;
+            String identifier = null;
+            String referenceAllele = null;
             List<String> alternateAlleles = new ArrayList<String>();
 
             String locationName = null;
@@ -91,7 +91,7 @@ final class JacksonVariationConverter implements Converter {
                 String field = parser.getCurrentName();
                 parser.nextToken();
                 if ("name".equals(field)) {
-                    id = parser.getText();
+                    identifier = parser.getText();
                 }
                 else if ("mappings".equals(field)) {
                     // todo:  will only catch last mapping
@@ -115,7 +115,7 @@ final class JacksonVariationConverter implements Converter {
                             else if ("allele_string".equals(mappingsField)) {
                                 String[] tokens = parser.getText().split("/");
                                 // todo:  check ref here against ancestral_allele
-                                reference = tokens[0];
+                                referenceAllele = tokens[0];
                                 alternateAlleles.add(tokens[1]);
                             }
                         }
@@ -132,7 +132,7 @@ final class JacksonVariationConverter implements Converter {
                     }
                 }
             }
-            return new Variation(id, reference, alternateAlleles, new Location(locationName, coordinateSystem, start, end, strand));
+            return new Variation(identifier, referenceAllele, alternateAlleles, new Location(locationName, coordinateSystem, start, end, strand));
         }
         finally {
             try {
@@ -156,10 +156,9 @@ final class JacksonVariationConverter implements Converter {
             parser = jsonFactory.createParser(inputStream);
             parser.nextToken();
 
-            String name = null;
-            boolean somatic = false;
-            Location location = null;
-            List<Transcript> transcripts = new ArrayList<Transcript>();
+            String identifier = null;
+            String referenceAllele = null;
+            List<String> alternateAlleles = new ArrayList<String>();
 
             String locationName = null;
             String coordinateSystem = "chromosome";
@@ -167,19 +166,18 @@ final class JacksonVariationConverter implements Converter {
             int end = -1;
             int strand = -1;
 
-            String transcriptName = null;
-            String biotype = null;
+            List<TranscriptConsequences> transcriptConsequences = new ArrayList<TranscriptConsequences>();
+
+            int transcriptStrand = -1;
             boolean canonical = false;
             String geneId = null;
             String transcriptId = null;
             String translationId = null;
             String transcriptAlleleString = null;
-            List<Allele> alleles = new ArrayList<Allele>();
-
-            String alleleString = null;
-            String variantAlleleString = null;
-            String codonAlleleString = null;
-            String translationAlleleString = null;
+            String codons = null;
+            String hgvsc = null;
+            String aminoAcids = null;
+            String hgvsp = null;
             List<String> consequenceTerms = new ArrayList<String>();
 
             while (parser.nextToken() != JsonToken.END_ARRAY) {
@@ -188,7 +186,7 @@ final class JacksonVariationConverter implements Converter {
                     parser.nextToken();
 
                     if ("id".equals(field)) {
-                        name = parser.getText();
+                        identifier = parser.getText();
                     }
                     else if ("seq_region_name".equals(field)) {
                         locationName = parser.getText();
@@ -202,8 +200,15 @@ final class JacksonVariationConverter implements Converter {
                     else if ("strand".equals(field)) {
                         strand = parser.getIntValue();
                     }
+                    /*
+                    else if ("somatic".equals(field)) {
+                        somatic = (Integer.parseInt(parser.getText()) > 0);
+                    }
+                    */
                     else if ("allele_string".equals(field)) {
-                        alleleString = parser.getText();
+                        String[] tokens = parser.getText().split("/");
+                        referenceAllele = tokens[0];
+                        alternateAlleles.add(tokens[1]);
                     }
                     else if ("transcript_consequences".equals(field)) {
                         while (parser.nextToken() != JsonToken.END_ARRAY) {
@@ -211,30 +216,32 @@ final class JacksonVariationConverter implements Converter {
                                 String transcriptField = parser.getCurrentName();
                                 parser.nextToken();
 
-                                if ("biotype".equals(transcriptField)) {
-                                    biotype = parser.getText();
+                                if ("strand".equals(transcriptField)) {
+                                    transcriptStrand = parser.getIntValue();
                                 }
-                                /*
-                                  seems to be missing entirely now
-
-                                else if ("is_canonical".equals(transcriptField)) {
+                                else if ("canonical".equals(transcriptField)) {
                                     canonical = (Integer.parseInt(parser.getText()) > 0);
                                 }
-                                */
                                 else if ("gene_id".equals(transcriptField)) {
                                     geneId = parser.getText();
                                 }
                                 else if ("transcript_id".equals(transcriptField)) {
                                     transcriptId = parser.getText();
                                 }
+                                else if ("protein_id".equals(transcriptField)) {
+                                    translationId = parser.getText();
+                                }
                                 else if ("codons".equals(transcriptField)) {
-                                    codonAlleleString = parser.getText();
+                                    codons = parser.getText();
                                 }
-                                else if ("amino_acid".equals(transcriptField)) {
-                                    translationAlleleString = parser.getText();
+                                else if ("hgvsc".equals(transcriptField)) {
+                                    hgvsc = parser.getText();
                                 }
-                                else if ("variant_allele".equals(transcriptField)) {
-                                    variantAlleleString = parser.getText();
+                                else if ("amino_acids".equals(transcriptField)) {
+                                    aminoAcids = parser.getText();
+                                }
+                                else if ("hgvsp".equals(transcriptField)) {
+                                    hgvsp = parser.getText();
                                 }
                                 else if ("consequence_terms".equals(transcriptField)) {
                                     while (parser.nextToken() != JsonToken.END_ARRAY) {
@@ -243,23 +250,18 @@ final class JacksonVariationConverter implements Converter {
                                 }
                             }
 
-                            // variant allele string is only partial, want A/T but only get T
-                            alleles.add(new Allele(variantAlleleString, codonAlleleString, translationAlleleString, consequenceTerms));
-                            // what did transcriptName map to before?
-                            //transcripts.add(new Transcript(transcriptName, biotype, canonical, geneId, transcriptId, translationId, transcriptAlleleString, alleles));
-                            transcripts.add(new Transcript(transcriptId, biotype, canonical, geneId, transcriptId, translationId, transcriptAlleleString, alleles));
+                            transcriptConsequences.add(new TranscriptConsequences(transcriptStrand, canonical, geneId, transcriptId, translationId, codons, hgvsc, aminoAcids, hgvsp, consequenceTerms));
 
-                            transcriptName = null;
-                            biotype = null;
+                            transcriptStrand = -1;
                             canonical = false;
                             geneId = null;
                             transcriptId = null;
                             translationId = null;
-                            alleles.clear();
-
-                            variantAlleleString = null;
-                            codonAlleleString = null;
-                            translationAlleleString = null;
+                            transcriptAlleleString = null;
+                            codons = null;
+                            hgvsc = null;
+                            aminoAcids = null;
+                            hgvsp = null;
                             consequenceTerms.clear();
                         }
                     }
@@ -272,8 +274,8 @@ final class JacksonVariationConverter implements Converter {
                     }
                 }
             }
-            location = new Location(locationName, coordinateSystem, start, end, strand);
-            return new VariationConsequences(name, somatic, location, transcripts);
+            Location location = new Location(locationName, coordinateSystem, start, end, strand);
+            return new VariationConsequences(identifier, referenceAllele, alternateAlleles, location, transcriptConsequences);
         }
         finally {
             try {

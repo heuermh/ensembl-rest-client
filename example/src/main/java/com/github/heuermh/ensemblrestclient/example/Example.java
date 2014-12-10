@@ -23,7 +23,6 @@
 */
 package com.github.heuermh.ensemblrestclient.example;
 
-import com.github.heuermh.ensemblrestclient.Allele;
 import com.github.heuermh.ensemblrestclient.ArchivedSequence;
 import com.github.heuermh.ensemblrestclient.ArchiveService;
 import com.github.heuermh.ensemblrestclient.EnsemblRestClientModule;
@@ -33,7 +32,7 @@ import com.github.heuermh.ensemblrestclient.LookupService;
 import com.github.heuermh.ensemblrestclient.OverlapService;
 import com.github.heuermh.ensemblrestclient.Sequence;
 import com.github.heuermh.ensemblrestclient.SequenceService;
-import com.github.heuermh.ensemblrestclient.Transcript;
+import com.github.heuermh.ensemblrestclient.TranscriptConsequences;
 import com.github.heuermh.ensemblrestclient.Variation;
 import com.github.heuermh.ensemblrestclient.VariationService;
 import com.github.heuermh.ensemblrestclient.VariationConsequences;
@@ -79,33 +78,33 @@ public final class Example {
         System.out.println("\nconsequences id search, COSM476");
         VariationConsequences cosm476 = variationService.consequences("human", "COSM476");
 
-        for (Transcript transcript : cosm476.getTranscripts()) {
-            for (Allele allele : transcript.getAlleles()) {
-                for (String consequenceTerm : allele.getConsequenceTerms()) {
-                    Location location = cosm476.getLocation();
-                    System.out.println(cosm476.getName() + "\t" + location.getName() + "\t" + location.getStart() + "\t" + location.getEnd() + "\t" + location.getStrand() + "\t" + transcript.getGeneId() + "\t" + transcript.getTranscriptId() + "\t" + allele.getAlleleString() + "\t" + consequenceTerm);
-                }
+        for (TranscriptConsequences transcript : cosm476.getTranscriptConsequences()) {
+            for (String consequenceTerm : transcript.getConsequenceTerms()) {
+                Location location = cosm476.getLocation();
+                System.out.println(cosm476.getIdentifier() + "\t" + cosm476.getReferenceAllele() + "\t" + cosm476.getAlternateAlleles() + "\t" + location.getName() + "\t" + location.getStart() + "\t" + location.getEnd() + "\t" + location.getStrand() + "\t" + transcript.getGeneId() + "\t" + transcript.getTranscriptId() + "\t" + consequenceTerm);
             }
         }
 
         System.out.println("\nconsequences region search, 9:22125502-22125502:1");
         VariationConsequences region = variationService.consequences("human", "9:22125502-22125502:1", "C");
 
-        for (Transcript transcript : region.getTranscripts()) {
-            for (Allele allele : transcript.getAlleles()) {
-                for (String consequenceTerm : allele.getConsequenceTerms()) {
-                    Location location = region.getLocation();
-                    System.out.println(region.getName() + "\t" + location.getName() + "\t" + location.getStart() + "\t" + location.getEnd() + "\t" + location.getStrand() + "\t" + transcript.getGeneId() + "\t" + transcript.getTranscriptId() + "\t" + allele.getAlleleString() + "\t" + consequenceTerm);
-                }
+        for (TranscriptConsequences transcript : region.getTranscriptConsequences()) {
+            for (String consequenceTerm : transcript.getConsequenceTerms()) {
+                Location location = region.getLocation();
+                System.out.println(region.getIdentifier() + "\t" + region.getReferenceAllele() + "\t" + region.getAlternateAlleles() + "\t" + location.getName() + "\t" + location.getStart() + "\t" + location.getEnd() + "\t" + location.getStrand() + "\t" + transcript.getGeneId() + "\t" + transcript.getTranscriptId() + "\t" + consequenceTerm);
             }
         }
 
         SequenceService sequenceService = injector.getInstance(SequenceService.class);
 
         System.out.println("\nsequence, 9:22125502-22125502:1 plus 25 bp flanking sequence");
-        Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
+        /* 6:29909037-29913661 */
+        //Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
+        Sequence sequence = sequenceService.sequence("human", "6:29909037-29913661:1", 0, 0, "soft");
 
         System.out.println(">" + sequence.getIdentifier());
         System.out.println(sequence.getSequence());
+
+
     }
 }

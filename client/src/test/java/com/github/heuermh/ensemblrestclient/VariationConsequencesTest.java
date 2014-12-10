@@ -39,53 +39,18 @@ import com.google.common.collect.ImmutableList;
  */
 public final class VariationConsequencesTest {
     private Location location;
-    private Allele allele;
-    private Transcript transcript;
+    private TranscriptConsequences transcriptConsequences;
     private VariationConsequences variationConsequences;
 
     @Before
     public void setUp() {
         location = new Location("7", "chromosome", 140453136, 140453136, 1);
-        allele = new Allele("A/T", "GTG/GAG", "V/E", ImmutableList.of("missense_variant"));
-        transcript = new Transcript("BRAF", "protein_coding", false, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "T/A", ImmutableList.of(allele));
-        variationConsequences = new VariationConsequences("COSM476", true, location, ImmutableList.of(transcript));
-    }
-
-    @Test(expected=NullPointerException.class)
-    public void testConstructorNullLocation() {
-        new VariationConsequences("COSM476", true, null, ImmutableList.of(transcript));
-    }
-
-    @Test(expected=NullPointerException.class)
-    public void testConstructorNullTranscripts() {
-        new VariationConsequences("COSM476", true, location, null);
+        transcriptConsequences = new TranscriptConsequences(-1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
+        variationConsequences = new VariationConsequences("COSM476", "A", ImmutableList.of("T"), location, ImmutableList.of(transcriptConsequences));
     }
 
     @Test
     public void testConstructor() {
         assertNotNull(variationConsequences);
-    }
-
-    @Test
-    public void testName() {
-        assertEquals("COSM476", variationConsequences.getName());
-    }
-
-    @Test
-    public void testSomatic() {
-        assertTrue(variationConsequences.isSomatic());
-    }
-
-    @Test
-    public void testLocation() {
-        assertNotNull(variationConsequences.getLocation());
-        assertEquals(location, variationConsequences.getLocation());
-    }
-
-    @Test
-    public void testTranscripts() {
-        assertNotNull(variationConsequences.getTranscripts());
-        assertEquals(1, variationConsequences.getTranscripts().size());
-        assertTrue(variationConsequences.getTranscripts().contains(transcript));
     }
 }

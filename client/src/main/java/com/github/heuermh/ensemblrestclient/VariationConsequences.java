@@ -35,38 +35,46 @@ import com.google.common.collect.ImmutableList;
  * @author  Michael Heuer
  */
 public final class VariationConsequences {
-    private final String name;
-    private final boolean somatic;
+    private final String identifier;
+    private final String referenceAllele;
+    private final List<String> alternateAlleles;
     private final Location location;
-    private final List<Transcript> transcripts;
+    private final List<TranscriptConsequences> transcriptConsequences;
 
-    VariationConsequences(final String name,
-                          final boolean somatic,
+    VariationConsequences(final String identifier,
+                          final String referenceAllele,
+                          final List<String> alternateAlleles,
                           final Location location,
-                          final List<Transcript> transcripts) {
+                          final List<TranscriptConsequences> transcriptConsequences) {
 
+        checkNotNull(alternateAlleles);
         checkNotNull(location);
-        checkNotNull(transcripts);
+        checkNotNull(transcriptConsequences);
 
-        this.name = name;
-        this.somatic = somatic;
+        this.identifier = identifier;
+        this.referenceAllele = referenceAllele;
+        this.alternateAlleles = ImmutableList.copyOf(alternateAlleles);
         this.location = location;
-        this.transcripts = ImmutableList.copyOf(transcripts);
+        this.transcriptConsequences = ImmutableList.copyOf(transcriptConsequences);
     }
 
-    public String getName() {
-        return name;
+    public String getIdentifier() {
+        return identifier;
     }
 
-    public boolean isSomatic() {
-        return somatic;
+    public String getReferenceAllele() {
+        return referenceAllele;
+    }
+
+    public List<String> getAlternateAlleles() {
+        return alternateAlleles;
     }
 
     public Location getLocation() {
         return location;
     }
 
-    public List<Transcript> getTranscripts() {
-        return transcripts;
+    public List<TranscriptConsequences> getTranscriptConsequences() {
+        return transcriptConsequences;
     }
 }

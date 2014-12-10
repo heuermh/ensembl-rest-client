@@ -24,6 +24,7 @@
 package com.github.heuermh.ensemblrestclient;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -33,52 +34,30 @@ import org.junit.Test;
 import com.google.common.collect.ImmutableList;
 
 /**
- * Unit test for Allele.
+ * Unit test for TranscriptConsequences.
  *
  * @author  Michael Heuer
  */
-public final class AlleleTest {
-    private Allele allele;
+public final class TranscriptConsequencesTest {
+    private TranscriptConsequences transcriptConsequences;
 
     @Before
     public void setUp() {
-        allele = new Allele("A/T", "GTG/GAG", "V/E", ImmutableList.of("missense_variant"));
+        transcriptConsequences = new TranscriptConsequences(-1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
     }
 
     @Test(expected=NullPointerException.class)
-    public void testConstructorNullAlleleString() {
-        new Allele(null, "GTG/GAG", "V/E", ImmutableList.of("missense_variant"));
+    public void testConstructorNullTranscriptId() {
+        new TranscriptConsequences(-1, true, "ENSG00000157764", null, "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullConsequenceTerms() {
-        new Allele("A/T", "GTG/GAG", "V/E", null);
+        new TranscriptConsequences(-1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", null);
     }
 
     @Test
     public void testConstructor() {
-        assertNotNull(allele);
-    }
-
-    @Test
-    public void testAlleleString() {
-        assertEquals("A/T", allele.getAlleleString());
-    }
-
-    @Test
-    public void testCodonAlleleString() {
-        assertEquals("GTG/GAG", allele.getCodonAlleleString());
-    }
-
-    @Test
-    public void testTranslationAlleleString() {
-        assertEquals("V/E", allele.getTranslationAlleleString());
-    }
-
-    @Test
-    public void testConsequenceTerms() {
-        assertNotNull(allele.getConsequenceTerms());
-        assertEquals(1, allele.getConsequenceTerms().size());
-        assertTrue(allele.getConsequenceTerms().contains("missense_variant"));
+        assertNotNull(transcriptConsequences);
     }
 }

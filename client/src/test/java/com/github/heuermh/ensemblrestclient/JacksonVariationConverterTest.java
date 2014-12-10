@@ -26,7 +26,12 @@ package com.github.heuermh.ensemblrestclient;
 import static com.github.heuermh.ensemblrestclient.JacksonVariationConverter.parseVariation;
 import static com.github.heuermh.ensemblrestclient.JacksonVariationConverter.parseVariationConsequences;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -34,10 +39,12 @@ import static org.mockito.Mockito.when;
 import java.io.InputStream;
 import java.io.IOException;
 
+import com.fasterxml.jackson.core.JsonFactory;
+
+import com.google.common.collect.ImmutableList;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import com.fasterxml.jackson.core.JsonFactory;
 
 import retrofit.converter.ConversionException;
 
@@ -72,12 +79,80 @@ public final class JacksonVariationConverterTest {
     public void testParseVariation_rs56116432() throws Exception {
         Variation variation = parseVariation(jsonFactory, getClass().getResourceAsStream("rs56116432.json"));
         assertNotNull(variation);
+        assertEquals("rs56116432", variation.getIdentifier());
+        assertEquals("C", variation.getReferenceAllele());
+        assertEquals(ImmutableList.of("T"), variation.getAlternateAlleles());
+        assertEquals("9", variation.getLocation().getName());
+        assertEquals("chromosome", variation.getLocation().getCoordinateSystem());
+        assertEquals(133256042, variation.getLocation().getStart());
+        assertEquals(133256042, variation.getLocation().getEnd());
+        assertEquals(1, variation.getLocation().getStrand());
     }
 
     @Test
     public void testParseVariationConsequences_COSM476() throws Exception {
         VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("COSM476.consequences.json"));
         assertNotNull(vc);
+        assertEquals("COSM476", vc.getIdentifier());
+        assertEquals("A", vc.getReferenceAllele());
+        assertEquals(ImmutableList.of("T"), vc.getAlternateAlleles());
+        assertEquals("7", vc.getLocation().getName());
+        assertEquals("chromosome", vc.getLocation().getCoordinateSystem());
+        assertEquals(140753336, vc.getLocation().getStart());
+        assertEquals(140753336, vc.getLocation().getEnd());
+        assertEquals(1, vc.getLocation().getStrand());
+
+        for (TranscriptConsequences tc : vc.getTranscriptConsequences()) {
+            assertEquals(-1, tc.getStrand());
+            assertEquals("ENSG00000157764", tc.getGeneId());
+
+            switch (tc.getTranscriptId()) {
+            case "ENST00000479537":
+                assertFalse(tc.isCanonical());
+                assertEquals("ENSP00000418033", tc.getTranslationId());
+
+                assertEquals("gTg/gAg", tc.getCodons());
+                assertEquals("V/E", tc.getAminoAcids());
+
+                assertEquals(2, tc.getConsequenceTerms().size());
+                assertTrue(tc.getConsequenceTerms().contains("missense_variant"));
+                assertTrue(tc.getConsequenceTerms().contains("NMD_transcript_variant"));
+                break;
+            case "ENST00000288602":
+                assertTrue(tc.isCanonical());
+                assertEquals("ENSP00000288602", tc.getTranslationId());
+
+                assertEquals("gTg/gAg", tc.getCodons());
+                assertEquals("V/E", tc.getAminoAcids());
+
+                assertEquals(1, tc.getConsequenceTerms().size());
+                assertTrue(tc.getConsequenceTerms().contains("missense_variant"));
+                break;
+            case "ENST00000496384":
+                assertFalse(tc.isCanonical());
+                assertEquals("ENSP00000419060", tc.getTranslationId());
+
+                assertEquals("gTg/gAg", tc.getCodons());
+                assertEquals("V/E", tc.getAminoAcids());
+
+                assertEquals(1, tc.getConsequenceTerms().size());
+                assertTrue(tc.getConsequenceTerms().contains("missense_variant"));
+                break;
+            case "ENST00000497784":
+                assertFalse(tc.isCanonical());
+                assertEquals("ENSP00000420119", tc.getTranslationId());
+
+                assertNull(tc.getCodons());
+                assertNull(tc.getAminoAcids());
+
+                assertEquals(2, tc.getConsequenceTerms().size());
+                assertTrue(tc.getConsequenceTerms().contains("3_prime_UTR_variant"));
+                assertTrue(tc.getConsequenceTerms().contains("NMD_transcript_variant"));
+                break;
+            default:
+                fail("unexpected transcript id " + tc.getTranscriptId());
+            }
+        }
     }
 
     @Test
