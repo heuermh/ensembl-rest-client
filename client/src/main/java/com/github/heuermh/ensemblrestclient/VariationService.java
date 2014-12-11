@@ -57,7 +57,7 @@ public interface VariationService {
      * @return variant consequences for the specified species and variation identifier
      * @throws EnsemblRestClientException if an error occurs
      */
-    @GET("/vep/{species}/id/{id}")
+    @GET("/vep/{species}/id/{id}?canonical=1&protein=1&hgvs=1")
     @Headers("Accept: application/json")
     VariationConsequences consequences(@Path("species") String species, @Path("id") String id);
 
@@ -71,7 +71,7 @@ public interface VariationService {
      * @return variant consequences for the specified species, region, and allele
      * @throws EnsemblRestClientException if an error occurs
      */
-    @GET("/vep/{species}/region/{region}/{allele}")
+    @GET("/vep/{species}/region/{region}/{allele}?canonical=1&protein=1&hgvs=1")
     @Headers("Accept: application/json")
     VariationConsequences consequences(@Path("species") String species, @Path("region") String region, @Path("allele") String allele);
 }

@@ -81,7 +81,7 @@ public final class Example {
         for (TranscriptConsequences transcript : cosm476.getTranscriptConsequences()) {
             for (String consequenceTerm : transcript.getConsequenceTerms()) {
                 Location location = cosm476.getLocation();
-                System.out.println(cosm476.getIdentifier() + "\t" + cosm476.getReferenceAllele() + "\t" + cosm476.getAlternateAlleles() + "\t" + location.getName() + "\t" + location.getStart() + "\t" + location.getEnd() + "\t" + location.getStrand() + "\t" + transcript.getGeneId() + "\t" + transcript.getTranscriptId() + "\t" + consequenceTerm);
+                System.out.println(cosm476.getIdentifier() + "\t" + cosm476.getReferenceAllele() + "\t" + cosm476.getAlternateAlleles() + "\t" + location.getName() + "\t" + location.getStart() + "\t" + location.getEnd() + "\t" + location.getStrand() + "\t" + transcript.getGeneId() + "\t" + transcript.getTranscriptId() + "\t" + (transcript.isCanonical() ? "*" : "") + "\t" + consequenceTerm);
             }
         }
 
@@ -91,20 +91,16 @@ public final class Example {
         for (TranscriptConsequences transcript : region.getTranscriptConsequences()) {
             for (String consequenceTerm : transcript.getConsequenceTerms()) {
                 Location location = region.getLocation();
-                System.out.println(region.getIdentifier() + "\t" + region.getReferenceAllele() + "\t" + region.getAlternateAlleles() + "\t" + location.getName() + "\t" + location.getStart() + "\t" + location.getEnd() + "\t" + location.getStrand() + "\t" + transcript.getGeneId() + "\t" + transcript.getTranscriptId() + "\t" + consequenceTerm);
+                System.out.println(region.getIdentifier() + "\t" + region.getReferenceAllele() + "\t" + region.getAlternateAlleles() + "\t" + location.getName() + "\t" + location.getStart() + "\t" + location.getEnd() + "\t" + location.getStrand() + "\t" + transcript.getGeneId() + "\t" + transcript.getTranscriptId() + "\t" + (transcript.isCanonical() ? "*" : "") + "\t" + consequenceTerm);
             }
         }
 
         SequenceService sequenceService = injector.getInstance(SequenceService.class);
 
         System.out.println("\nsequence, 9:22125502-22125502:1 plus 25 bp flanking sequence");
-        /* 6:29909037-29913661 */
-        //Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
-        Sequence sequence = sequenceService.sequence("human", "6:29909037-29913661:1", 0, 0, "soft");
+        Sequence sequence = sequenceService.sequence("human", "9:22125502-22125502:1", 25, 25, "soft");
 
         System.out.println(">" + sequence.getIdentifier());
         System.out.println(sequence.getSequence());
-
-
     }
 }
