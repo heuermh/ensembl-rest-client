@@ -30,6 +30,8 @@ import java.io.IOException;
 
 import java.lang.reflect.Type;
 
+import javax.annotation.concurrent.Immutable;
+
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
@@ -45,13 +47,16 @@ import retrofit.mime.TypedOutput;
  *
  * @author  Michael Heuer
  */
+@Immutable
 final class JacksonLookupConverter implements Converter {
     private final JsonFactory jsonFactory;
+
 
     JacksonLookupConverter(final JsonFactory jsonFactory) {
         checkNotNull(jsonFactory);
         this.jsonFactory = jsonFactory;
     }
+
 
     @Override
     public Object fromBody(final TypedInput body, final Type type) throws ConversionException {

@@ -25,17 +25,21 @@ package com.github.heuermh.ensemblrestclient;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import javax.annotation.concurrent.Immutable;
+
 /**
  * Lookup.
  *
  * @author  Michael Heuer
  */
+@Immutable
 public final class Lookup {
     private final String identifier;
     private final String species;
     private final String type;
     private final String database;
     private final Location location;
+
 
     Lookup(final String identifier,
            final String species,
@@ -53,6 +57,7 @@ public final class Lookup {
         this.database = database;
         this.location = location;
     }
+
 
     public String getIdentifier() {
         return identifier;

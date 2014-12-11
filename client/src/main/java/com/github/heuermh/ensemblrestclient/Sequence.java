@@ -25,16 +25,20 @@ package com.github.heuermh.ensemblrestclient;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import javax.annotation.concurrent.Immutable;
+
 /**
  * Sequence.
  *
  * @since 1.3
  * @author  Michael Heuer
  */
+@Immutable
 public final class Sequence {
     private final String identifier;
     private final String sequence;
     private final String molecule;
+
 
     Sequence(final String identifier,
              final String sequence,
@@ -48,6 +52,7 @@ public final class Sequence {
         this.sequence = sequence;
         this.molecule = molecule;
     }
+
 
     public String getIdentifier() {
         return identifier;

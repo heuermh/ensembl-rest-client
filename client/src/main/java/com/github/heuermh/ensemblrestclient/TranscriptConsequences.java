@@ -27,6 +27,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
 
+import javax.annotation.concurrent.Immutable;
+
 import com.google.common.collect.ImmutableList;
 
 /**
@@ -34,6 +36,7 @@ import com.google.common.collect.ImmutableList;
  *
  * @author  Michael Heuer
  */
+@Immutable
 public final class TranscriptConsequences {
     private final String alternateAllele;
     private final int strand;
@@ -46,6 +49,7 @@ public final class TranscriptConsequences {
     private final String aminoAcids;
     private final String hgvsp;
     private final List<String> consequenceTerms;
+
 
     TranscriptConsequences(final String alternateAllele,
                            final int strand,

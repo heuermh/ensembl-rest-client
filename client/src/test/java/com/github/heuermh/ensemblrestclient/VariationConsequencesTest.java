@@ -52,5 +52,14 @@ public final class VariationConsequencesTest {
     @Test
     public void testConstructor() {
         assertNotNull(variationConsequences);
+        assertEquals("COSM476", variationConsequences.getIdentifier());
+        assertEquals("A", variationConsequences.getReferenceAllele());
+        assertEquals(ImmutableList.of("T"), variationConsequences.getAlternateAlleles());
+        assertEquals("7", variationConsequences.getLocation().getName());
+        assertEquals(140453136, variationConsequences.getLocation().getStart());
+        assertEquals(140453136, variationConsequences.getLocation().getEnd());
+        assertEquals(1, variationConsequences.getLocation().getStrand());
+        assertEquals(1, variationConsequences.getTranscriptConsequences().size());
+        assertEquals("T", variationConsequences.getTranscriptConsequences().get(0).getAlternateAllele());
     }
 }

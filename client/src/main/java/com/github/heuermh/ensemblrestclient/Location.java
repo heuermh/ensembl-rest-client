@@ -25,17 +25,21 @@ package com.github.heuermh.ensemblrestclient;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import javax.annotation.concurrent.Immutable;
+
 /**
  * Location.
  *
  * @author  Michael Heuer
  */
+@Immutable
 public final class Location {
     private final String name;
     private final String coordinateSystem;
     private final int start;
     private final int end;
     private final int strand;
+
 
     Location(final String name,
              final String coordinateSystem,
@@ -52,6 +56,7 @@ public final class Location {
         this.end = end;
         this.strand = strand;
     }
+
 
     public String getName() {
         return name;

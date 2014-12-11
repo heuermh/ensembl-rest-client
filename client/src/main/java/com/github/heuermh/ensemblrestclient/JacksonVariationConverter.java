@@ -33,6 +33,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.concurrent.Immutable;
+
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
@@ -48,13 +50,16 @@ import retrofit.mime.TypedOutput;
  *
  * @author  Michael Heuer
  */
+@Immutable
 final class JacksonVariationConverter implements Converter {
     private final JsonFactory jsonFactory;
+
 
     JacksonVariationConverter(final JsonFactory jsonFactory) {
         checkNotNull(jsonFactory);
         this.jsonFactory = jsonFactory;
     }
+
 
     @Override
     public Object fromBody(final TypedInput body, final Type type) throws ConversionException {

@@ -23,11 +23,15 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 
 import com.fasterxml.jackson.core.JsonFactory;
+
+import javax.annotation.concurrent.Immutable;
 
 import retrofit.ErrorHandler;
 import retrofit.RestAdapter;
@@ -37,12 +41,40 @@ import retrofit.RestAdapter;
  *
  * @author  Michael Heuer
  */
+@Immutable
 public final class EnsemblRestClientModule extends AbstractModule {
-    // todo:  allow endpoint URL as configurable property
+    private final String endpointUrl;
+
+    /**
+     * Default endpoint URL, <code>http://rest.ensembl.org/</code>.
+     *
+     * @since 2.0
+     */
+    public static final String DEFAULT_ENDPOINT_URL = "http://rest.ensembl.org/";
+
+
+    /**
+     * Create a new Ensembl REST client module with the default endpoint URL.
+     */
+    public EnsemblRestClientModule() {
+        this(DEFAULT_ENDPOINT_URL);
+    }
+
+    /**
+     * Create a new Ensembl REST client module with the specified endpoint URL.
+     *
+     * @since 2.0
+     * @param endpointUrl endpoint URL, must not be null
+     */
+    public EnsemblRestClientModule(final String endpointUrl) {
+        checkNotNull(endpointUrl);
+        this.endpointUrl = endpointUrl;
+    }
+
 
     @Override
     protected void configure() {
-        bind(String.class).annotatedWith(EndpointURL.class).toInstance("http://rest.ensembl.org");
+        bind(String.class).annotatedWith(EndpointURL.class).toInstance(endpointUrl);
     }
 
     @Provides @Singleton

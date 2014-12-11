@@ -49,6 +49,11 @@ public final class EnsemblRestClientModuleTest {
         assertNotNull(module);
     }
 
+    @Test(expected=NullPointerException.class)
+    public void testConstructorNullEndpointUrl() {
+        new EnsemblRestClientModule(null);
+    }
+
     @Test
     public void testEnsemblRestClientModule() {
         Injector injector = Guice.createInjector(module);

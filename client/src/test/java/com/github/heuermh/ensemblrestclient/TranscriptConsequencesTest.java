@@ -64,5 +64,17 @@ public final class TranscriptConsequencesTest {
     @Test
     public void testConstructor() {
         assertNotNull(transcriptConsequences);
+        assertEquals("T", transcriptConsequences.getAlternateAllele());
+        assertEquals(-1, transcriptConsequences.getStrand());
+        assertEquals("ENSG00000157764", transcriptConsequences.getGeneId());
+        assertEquals("ENST00000288602", transcriptConsequences.getTranscriptId());
+        assertEquals("ENSP00000288602", transcriptConsequences.getTranslationId());
+        assertEquals("gTg/gAg", transcriptConsequences.getCodons());
+        assertEquals("ENSP00000288602.1:pVal28Glu", transcriptConsequences.getHgvsC());
+        assertEquals("V/E", transcriptConsequences.getAminoAcids());
+        assertEquals("ENST00000288602.3:c.83T>A", transcriptConsequences.getHgvsP());
+        assertEquals(2, transcriptConsequences.getConsequenceTerms().size());
+        assertTrue(transcriptConsequences.getConsequenceTerms().contains("missense_variant"));
+        assertTrue(transcriptConsequences.getConsequenceTerms().contains("NMD_transcript_variant"));
     }
 }

@@ -27,6 +27,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
 
+import javax.annotation.concurrent.Immutable;
+
 import com.google.common.collect.ImmutableList;
 
 /**
@@ -34,11 +36,13 @@ import com.google.common.collect.ImmutableList;
  *
  * @author  Michael Heuer
  */
+@Immutable
 public final class Variation {
     private final String identifier;
     private final String referenceAllele;
     private final List<String> alternateAlleles;
     private final Location location;
+
 
     Variation(final String identifier,
               final String referenceAllele,
@@ -55,6 +59,7 @@ public final class Variation {
         this.alternateAlleles = ImmutableList.copyOf(alternateAlleles);
         this.location = location;
     }
+
 
     public String getIdentifier() {
         return identifier;

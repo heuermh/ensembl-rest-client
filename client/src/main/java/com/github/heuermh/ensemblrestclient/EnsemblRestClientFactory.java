@@ -25,6 +25,8 @@ package com.github.heuermh.ensemblrestclient;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import javax.annotation.concurrent.Immutable;
+
 import com.fasterxml.jackson.core.JsonFactory;
 
 import retrofit.ErrorHandler;
@@ -36,6 +38,7 @@ import retrofit.RestAdapter;
  * @since 1.2
  * @author  Michael Heuer
  */
+@Immutable
 public final class EnsemblRestClientFactory {
     private final String defaultEndpointUrl;
     private final JsonFactory jsonFactory;

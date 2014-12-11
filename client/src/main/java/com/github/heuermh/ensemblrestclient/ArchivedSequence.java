@@ -23,12 +23,15 @@
 */
 package com.github.heuermh.ensemblrestclient;
 
+import javax.annotation.concurrent.Immutable;
+
 /**
  * Archived sequence.
  *
  * @since 2.0
  * @author  Michael Heuer
  */
+@Immutable
 public final class ArchivedSequence {
     private final String id;
     private final String type;
