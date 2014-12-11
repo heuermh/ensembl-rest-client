@@ -116,7 +116,9 @@ final class JacksonVariationConverter implements Converter {
                                 String[] tokens = parser.getText().split("/");
                                 // todo:  check ref here against ancestral_allele
                                 referenceAllele = tokens[0];
-                                alternateAlleles.add(tokens[1]);
+                                for (int i = 1; i < tokens.length; i++) {
+                                    alternateAlleles.add(tokens[i]);
+                                }
                             }
                         }
                     }
@@ -168,6 +170,7 @@ final class JacksonVariationConverter implements Converter {
 
             List<TranscriptConsequences> transcriptConsequences = new ArrayList<TranscriptConsequences>();
 
+            String alternateAllele = null;
             int transcriptStrand = -1;
             boolean canonical = false;
             String geneId = null;
@@ -200,15 +203,12 @@ final class JacksonVariationConverter implements Converter {
                     else if ("strand".equals(field)) {
                         strand = parser.getIntValue();
                     }
-                    /*
-                    else if ("somatic".equals(field)) {
-                        somatic = (Integer.parseInt(parser.getText()) > 0);
-                    }
-                    */
                     else if ("allele_string".equals(field)) {
                         String[] tokens = parser.getText().split("/");
                         referenceAllele = tokens[0];
-                        alternateAlleles.add(tokens[1]);
+                        for (int i = 1; i < tokens.length; i++) {
+                            alternateAlleles.add(tokens[i]);
+                        }
                     }
                     else if ("transcript_consequences".equals(field)) {
                         while (parser.nextToken() != JsonToken.END_ARRAY) {
@@ -216,7 +216,10 @@ final class JacksonVariationConverter implements Converter {
                                 String transcriptField = parser.getCurrentName();
                                 parser.nextToken();
 
-                                if ("strand".equals(transcriptField)) {
+                                if ("variant_allele".equals(transcriptField)) {
+                                    alternateAllele = parser.getText();
+                                }
+                                else if ("strand".equals(transcriptField)) {
                                     transcriptStrand = parser.getIntValue();
                                 }
                                 else if ("canonical".equals(transcriptField)) {
@@ -250,8 +253,9 @@ final class JacksonVariationConverter implements Converter {
                                 }
                             }
 
-                            transcriptConsequences.add(new TranscriptConsequences(transcriptStrand, canonical, geneId, transcriptId, translationId, codons, hgvsc, aminoAcids, hgvsp, consequenceTerms));
+                            transcriptConsequences.add(new TranscriptConsequences(alternateAllele, transcriptStrand, canonical, geneId, transcriptId, translationId, codons, hgvsc, aminoAcids, hgvsp, consequenceTerms));
 
+                            alternateAllele = null;
                             transcriptStrand = -1;
                             canonical = false;
                             geneId = null;

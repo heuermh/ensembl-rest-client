@@ -35,6 +35,7 @@ import com.google.common.collect.ImmutableList;
  * @author  Michael Heuer
  */
 public final class TranscriptConsequences {
+    private final String alternateAllele;
     private final int strand;
     private final boolean canonical;
     private final String geneId;
@@ -46,7 +47,8 @@ public final class TranscriptConsequences {
     private final String hgvsp;
     private final List<String> consequenceTerms;
 
-    TranscriptConsequences(final int strand,
+    TranscriptConsequences(final String alternateAllele,
+                           final int strand,
                            final boolean canonical,
                            final String geneId,
                            final String transcriptId,
@@ -57,9 +59,11 @@ public final class TranscriptConsequences {
                            final String hgvsp,
                            final List<String> consequenceTerms) {
 
+        checkNotNull(alternateAllele);
         checkNotNull(transcriptId);
         checkNotNull(consequenceTerms);
 
+        this.alternateAllele = alternateAllele;
         this.strand = strand;
         this.canonical = canonical;
         this.geneId = geneId;
@@ -70,6 +74,11 @@ public final class TranscriptConsequences {
         this.aminoAcids = aminoAcids;
         this.hgvsp = hgvsp;
         this.consequenceTerms = ImmutableList.copyOf(consequenceTerms);
+    }
+
+
+    public String getAlternateAllele() {
+        return alternateAllele;
     }
 
     public int getStrand() {

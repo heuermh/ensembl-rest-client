@@ -43,17 +43,22 @@ public final class TranscriptConsequencesTest {
 
     @Before
     public void setUp() {
-        transcriptConsequences = new TranscriptConsequences(-1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
+        transcriptConsequences = new TranscriptConsequences("T", -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void testConstructorNullAlternateAllele() {
+        new TranscriptConsequences(null, -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullTranscriptId() {
-        new TranscriptConsequences(-1, true, "ENSG00000157764", null, "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
+        new TranscriptConsequences("T", -1, true, "ENSG00000157764", null, "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullConsequenceTerms() {
-        new TranscriptConsequences(-1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", null);
+        new TranscriptConsequences("T", -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:pVal28Glu", "V/E", "ENST00000288602.3:c.83T>A", null);
     }
 
     @Test

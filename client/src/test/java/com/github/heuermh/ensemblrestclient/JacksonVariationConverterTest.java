@@ -103,6 +103,7 @@ public final class JacksonVariationConverterTest {
         assertEquals(1, vc.getLocation().getStrand());
 
         for (TranscriptConsequences tc : vc.getTranscriptConsequences()) {
+            assertEquals("T", tc.getAlternateAllele());
             assertEquals(-1, tc.getStrand());
             assertEquals("ENSG00000157764", tc.getGeneId());
 
@@ -159,6 +160,38 @@ public final class JacksonVariationConverterTest {
     public void testParseVariationConsequences_rs10244642() throws Exception {
         VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("rs10244642.consequences.json"));
         assertNotNull(vc);
+    }
+
+    @Test
+    public void testParseVariationConsequences_rs1160355506() throws Exception {
+        VariationConsequences vc = parseVariationConsequences(jsonFactory, getClass().getResourceAsStream("rs116035550.consequences.json"));
+        assertNotNull(vc);
+
+        assertEquals("rs116035550", vc.getIdentifier());
+        assertEquals("G", vc.getReferenceAllele());
+        assertEquals(ImmutableList.of("A", "C"), vc.getAlternateAlleles());
+        //assertEquals("GRCh38", vc.getAssembly());
+        assertEquals("11", vc.getLocation().getName());
+        assertEquals("chromosome", vc.getLocation().getCoordinateSystem());
+        assertEquals(212464, vc.getLocation().getStart());
+        assertEquals(212464, vc.getLocation().getEnd());
+        assertEquals(1, vc.getLocation().getStrand());
+
+        for (TranscriptConsequences tc : vc.getTranscriptConsequences()) {
+            switch (tc.getGeneId()) {
+            case "ENSG00000142082":
+                assertEquals(-1, tc.getStrand());
+                break;
+            case "ENSG00000177963":
+                assertEquals(1, tc.getStrand());
+                break;
+            case "ENSG00000274298":
+                assertEquals(1, tc.getStrand());
+                break;
+            default:
+                fail("unexpected gene id " + tc.getGeneId());
+            }
+        }
     }
 
     @Test
