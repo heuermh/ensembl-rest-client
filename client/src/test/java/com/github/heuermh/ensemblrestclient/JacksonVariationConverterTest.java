@@ -113,7 +113,9 @@ public final class JacksonVariationConverterTest {
                 assertEquals("ENSP00000418033", tc.getTranslationId());
 
                 assertEquals("gTg/gAg", tc.getCodons());
+                assertEquals("ENST00000479537.3:c.83T>A", tc.getHgvsC());
                 assertEquals("V/E", tc.getAminoAcids());
+                assertEquals("ENSP00000418033.1:p.Val28Glu", tc.getHgvsP());
 
                 assertEquals(2, tc.getConsequenceTerms().size());
                 assertTrue(tc.getConsequenceTerms().contains("missense_variant"));

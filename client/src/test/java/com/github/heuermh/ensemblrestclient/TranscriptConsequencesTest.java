@@ -43,22 +43,22 @@ public final class TranscriptConsequencesTest {
 
     @Before
     public void setUp() {
-        transcriptConsequences = new TranscriptConsequences("T", -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:p.Val28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
+        transcriptConsequences = new TranscriptConsequences("T", -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENST00000288602.3:c.83T>A", "V/E", "ENSP00000288602.1:p.Val28Glu", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullAlternateAllele() {
-        new TranscriptConsequences(null, -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:p.Val28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
+        new TranscriptConsequences(null, -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENST00000288602.3:c.83T>A", "V/E", "ENSP00000288602.1:p.Val28Glu", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullTranscriptId() {
-        new TranscriptConsequences("T", -1, true, "ENSG00000157764", null, "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:p.Val28Glu", "V/E", "ENST00000288602.3:c.83T>A", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
+        new TranscriptConsequences("T", -1, true, "ENSG00000157764", null, "ENSP00000288602", "gTg/gAg", "ENST00000288602.3:c.83T>A", "V/E", "ENSP00000288602.1:p.Val28Glu", ImmutableList.of("missense_variant", "NMD_transcript_variant"));
     }
 
     @Test(expected=NullPointerException.class)
     public void testConstructorNullConsequenceTerms() {
-        new TranscriptConsequences("T", -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENSP00000288602.1:p.Val28Glu", "V/E", "ENST00000288602.3:c.83T>A", null);
+        new TranscriptConsequences("T", -1, true, "ENSG00000157764", "ENST00000288602", "ENSP00000288602", "gTg/gAg", "ENST00000288602.3:c.83T>A", "V/E", "ENSP00000288602.1:p.Val28Glu", null);
     }
 
     @Test
@@ -70,9 +70,9 @@ public final class TranscriptConsequencesTest {
         assertEquals("ENST00000288602", transcriptConsequences.getTranscriptId());
         assertEquals("ENSP00000288602", transcriptConsequences.getTranslationId());
         assertEquals("gTg/gAg", transcriptConsequences.getCodons());
-        assertEquals("ENSP00000288602.1:p.Val28Glu", transcriptConsequences.getHgvsC());
+        assertEquals("ENST00000288602.3:c.83T>A", transcriptConsequences.getHgvsC());
         assertEquals("V/E", transcriptConsequences.getAminoAcids());
-        assertEquals("ENST00000288602.3:c.83T>A", transcriptConsequences.getHgvsP());
+        assertEquals("ENSP00000288602.1:p.Val28Glu", transcriptConsequences.getHgvsP());
         assertEquals(2, transcriptConsequences.getConsequenceTerms().size());
         assertTrue(transcriptConsequences.getConsequenceTerms().contains("missense_variant"));
         assertTrue(transcriptConsequences.getConsequenceTerms().contains("NMD_transcript_variant"));
