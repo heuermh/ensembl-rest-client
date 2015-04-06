@@ -52,7 +52,7 @@ public final class Example {
 
         ArchiveService archiveService = injector.getInstance(ArchiveService.class);
 
-        System.out.println("\narchived sequence, ");
+        System.out.println("\narchived sequence, ENSG00000157764");
         ArchivedSequence archivedSequence = archiveService.archivedSequence("ENSG00000157764");
         System.out.println(archivedSequence.getId() + "\t" + archivedSequence.getType() + "\t" + archivedSequence.getAssembly() + "\t" + archivedSequence.getRelease() + "\t" + archivedSequence.getVersion() + "\t" + archivedSequence.getLatest());
 
@@ -85,7 +85,7 @@ public final class Example {
             }
         }
 
-        System.out.println("\nconsequences region search, 9:22125502-22125502:1");
+        System.out.println("\nconsequences region search, 9:22125502-22125502:1 T>C");
         VariationConsequences region = variationService.consequences("human", "9:22125502-22125502:1", "C");
 
         for (TranscriptConsequences transcript : region.getTranscriptConsequences()) {
