@@ -11,7 +11,7 @@ Java client for the Ensembl REST API.
 Install
 
  * JDK 1.7 or later, http://openjdk.java.net/
- * Apache Maven 3.2.3 or later, http://maven.apache.org/
+ * Apache Maven 3.3.1 or later, http://maven.apache.org/
 
 
 To build
@@ -27,9 +27,9 @@ To assemble example
 
 To run example
     
-    $ java -jar target/ensembl-rest-client-example-2.0-SNAPSHOT-jar-with-dependencies.jar 
+    $ java -jar target/ensembl-rest-client-example-2.1-SNAPSHOT-jar-with-dependencies.jar 
     
-    archived sequence, 
+    archived sequence, ENSG00000157764
     ENSG00000157764    Gene GRCh38  77      10      ENSG00000157764.10
     
     lookup, ENSG00000157764
@@ -50,7 +50,7 @@ To run example
     COSM476      7  140753336       140753336       1       ENSG00000157764 ENST00000497784 T       3_prime_UTR_variant
     COSM476      7  140753336       140753336       1       ENSG00000157764 ENST00000497784 T       NMD_transcript_variant
     
-    consequences region search, 9:22125503-22125502:1
+    consequences region search, 9:22125503-22125502:1 T>C
     temp         9      22125502    22125502        1       ENSG00000240498 ENST00000584020 C       downstream_gene_variant
     temp         9      22125502    22125502        1       ENSG00000240498 ENST00000584816 C       downstream_gene_variant
     temp         9      22125502    22125502        1       ENSG00000240498 ENST00000585267 C       downstream_gene_variant
@@ -75,7 +75,7 @@ Add the following dependency declaration to your pom.xml
 <dependency>
   <groupId>com.github.heuermh.ensemblrestclient</groupId>
   <artifactId>ensembl-rest-client</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.1-SNAPSHOT</version>
 </dependency>
 ```
 
