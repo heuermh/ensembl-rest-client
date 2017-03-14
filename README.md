@@ -6,7 +6,7 @@ Java client for the Ensembl REST API.
 [![Build Status](https://travis-ci.org/heuermh/ensembl-rest-client.png)](https://travis-ci.org/heuermh/ensembl-rest-client)
 
 
-###Hacking ensembl-rest-client
+### Hacking ensembl-rest-client
 
 Install
 
@@ -67,7 +67,7 @@ To run example
     CTCATACTAACCATATGATCAACAGTTGAAAAGCAGCCACTCGCAGAGGTA
 
 
-###Using ensembl-rest-client
+### Using ensembl-rest-client
 
 Add the following dependency declaration to your pom.xml
 
